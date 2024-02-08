@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import a from "next/link";
 import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
-import {LinkedInIcon, Github3Icon } from "./Icons";
+import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
+import {motion} from "framer-motion";
 
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
@@ -13,7 +14,7 @@ const CustomLink = ({ href, title, className }) => {
   console.log(path);
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <a href={href} className={`${className} relative group`}>
       {title}
 
       <span
@@ -27,13 +28,13 @@ const CustomLink = ({ href, title, className }) => {
       >
         &nbsp;
       </span>
-    </Link>
+    </a>
   );
 };
 
 const NavBar = () => {
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
+    <header className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert text-darkPurple">
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
 
@@ -43,22 +44,37 @@ const NavBar = () => {
 
         <CustomLink href="/articles" title="Articles" className="ml-4" />
 
-        <CustomLink href="/contact" title="Contact" className="m-4" />
+        {/* <CustomLink href="/contact" title="Contact" className="m-4" /> */}
       </nav>
 
-      <nav>
-        <Link href="/" target={"blank"}>
-          <LinkedInIcon/>
-        </Link>
-        <Link href="/" target={"blank"}>
-          <Github3Icon/>
-        </Link>
-        <Link href="/" target={"blank"}>
+      <nav className=" flex items-center justify-center flex-wrap">
+        <motion.a
+          href="https://www.linkedin.com/in/emanwebdev/"
+          target={"blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 1.1 }}
+        >
+          <LinkedInIcon />
+        </motion.a>
+        <motion.a
+          href="https://github.com/dolce-emmy"
+          target={"blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 1.1 }}
+        >
+          <Github3Icon />
+        </motion.a>
+        <motion.a
+          href="https://medium.com/@dolce-emmy/about"
+          target={"blank"}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 1.1 }}
+        >
+          <Medium />
+        </motion.a>
+        {/* <a href="/" target={"blank"}>
           T
-        </Link>
-        <Link href="/" target={"blank"}>
-          T
-        </Link>
+        </a> */}
       </nav>
 
       <div className="absolute left-[50%] top-2 translate-x-[50%]">

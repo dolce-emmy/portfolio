@@ -1,12 +1,14 @@
-
 import NavBar from "./components/NavBar";
 import Image from "next/image";
 import profilePic from "/public/images/profile/developer-coding-hd.png";
 import AnimatedText from "./components/AnimatedText";
+import Link from "next/link";
+import arrowIcon from "/public/images/arrow-icon.png";
+import Resume from "./components/Resume";
+
+
 
 export default function Home() {
-
-
   return (
     <>
       {/* <Head>
@@ -21,7 +23,6 @@ export default function Home() {
               <Image
                 src={profilePic}
                 alt="developer girl coding"
-                
                 className="w-full h-auto"
               />
             </div>
@@ -34,8 +35,8 @@ export default function Home() {
                 className="text-left"
               />
 
-              <p>
-                Hello World!. I'm a passionate web developer on a journey of
+              <p className="my-4 text-base font-medium text-darkPurple">
+                Hello World! I'm a passionate web developer on a journey of
                 self-discovery and skill-building. With a background as a
                 self-taught developer, I delved into the world of web
                 development driven by curiosity and a thirst for knowledge. I
@@ -45,6 +46,10 @@ export default function Home() {
                 what's possible in the digital realm. Explore my portfolio to
                 see a glimpse of my work.
               </p>
+              <div className="flex items-center self-start mt-2">
+                <Resume />
+                
+              </div>
             </div>
           </div>
         </div>

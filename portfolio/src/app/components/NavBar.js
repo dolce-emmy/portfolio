@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import a from "next/link";
 import Logo from "./Logo";
@@ -14,6 +13,7 @@ const CustomLink = ({ href, title, className }) => {
   console.log(path);
 
   return (
+    
     <a href={href} className={`${className} relative group`}>
       {title}
 
@@ -42,7 +42,9 @@ const NavBar = () => {
 
         <CustomLink href="/projects" title="Projects" className="mx-4" />
 
-        <CustomLink href="/articles" title="Articles" className="ml-4" />
+        <CustomLink href="/articles" title="Articles" className="mx-4" />
+        
+        <CustomLink href="/contact" title="Contact" className="ml-4" />
 
         {/* <CustomLink href="/contact" title="Contact" className="m-4" /> */}
       </nav>

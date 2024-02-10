@@ -30,3 +30,21 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes star-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.animate-star {
+  animation: star-animation 1s ease-in-out;
+}
+
+.animate-stars {
+  animation: stars 1s ease-out smooth infinite;   
+}

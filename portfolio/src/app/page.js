@@ -1,10 +1,12 @@
+'use client';
 import NavBar from "./components/NavBar";
 import Image from "next/image";
 import profilePic from "/public/images/profile/developer-coding-hd.png";
 import AnimatedText from "./components/AnimatedText";
 import Link from "next/link";
-import arrowIcon from "/public/images/arrow-icon.png";
+
 import Resume from "./components/Resume";
+import Resume2 from "./components/Resume2";
 
 
 
@@ -47,7 +49,7 @@ export default function Home() {
                 see a glimpse of my work.
               </p>
               <div className="flex items-center self-start mt-2">
-                <Resume />
+                <Resume2 />
                 
               </div>
             </div>

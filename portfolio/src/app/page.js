@@ -1,14 +1,14 @@
-'use client';
+"use client";
 import NavBar from "./components/NavBar";
 import Image from "next/image";
 import profilePic from "/public/images/profile/developer-coding-hd.png";
 import AnimatedText from "./components/AnimatedText";
 import Link from "next/link";
-
+import Template from "./components/Template";
 import Resume from "./components/Resume";
 import Resume2 from "./components/Resume2";
-
-
+import HireMe from "./components/HireMe";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,10 +16,9 @@ export default function Home() {
       {/* <Head>
       <link rel="icon" href="/favicon.ico" />
       </Head> */}
-
       <NavBar />
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
-        <div className="w-full h-full inline-block z-0 bg-desert p-28 pt-0 ">
+        <Template className="pt-0 ">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
               <Image
@@ -50,11 +49,12 @@ export default function Home() {
               </p>
               <div className="flex items-center self-start mt-2">
                 <Resume2 />
-                
               </div>
             </div>
           </div>
-        </div>
+        </Template>
+        <HireMe />
+        {/* <Footer /> */}
       </main>
     </>
   );

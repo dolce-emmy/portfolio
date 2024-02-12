@@ -46,5 +46,5 @@ body {
 }
 
 .animate-stars {
-  animation: stars 1s ease-out smooth infinite;   
+  animation: stars 5s ease-out smooth infinite;   
 }

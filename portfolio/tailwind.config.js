@@ -19,7 +19,12 @@ module.exports = {
         champagne: "#F9E7DD",
         snow: "#FFF7F5",
         darkPurple: "#27182D",
+        cordovan: "#80363F",
+
         // lightYellow: "#FCE0A2",
+      },
+      animation: {
+        "spin-slow": "spin 15s linear infinite",
       },
     },
   },

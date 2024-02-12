@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import downloadIcon from "/public/images/download-icon.png";
+import like from "/public/images/like.png";
 import { Star } from "./Icons";
 import { motion } from "framer-motion";
 
@@ -10,7 +11,7 @@ const AnimatedStars = ({ animateStars }) => {
   return (
     animateStars && (
       <motion.div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-        {[...Array(25)].map((_, index) => (
+        {[...Array(20)].map((_, index) => (
           <Star
             key={index}
             // className={`w-10 h-10 rounded-full bg-yellow-400 animate-star delay-${
@@ -20,7 +21,7 @@ const AnimatedStars = ({ animateStars }) => {
             style={{
               position: "absolute",
               top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              left: `${Math.random() * 90}%`,
             }}
           />
         ))}
@@ -64,9 +65,9 @@ const Resume2 = () => {
     }, 1000);
   };
 
-  const handleClose = () => {
-    setShowThankYou(false);
-  };
+  // const handleClose = () => {
+  //   setShowThankYou(false);
+  // };
 
   return (
     <>
@@ -80,12 +81,15 @@ const Resume2 = () => {
 
       <AnimatedStars animateStars={animateStars} />
 
-      {showThankYou && (
+      {/* {showThankYou && (
         <div className="fixed bottom-2 end-2 ">
-          <div className="bg-white rounded-lg p-4 shadow-lg">
-            <p className="text-lg font-semibold text-center">Downloaded Successfully Thank You!</p>
+          <div className="bg-darkPurple rounded-lg p-4 shadow-lg">
+            <p className="text-lg font-semibold text-center text-snow">
+              Downloaded Successfully
+              <Image src={like} alt="like icon" className="w-10 inline ml-2" />
+            </p>
             <button
-              className="absolute top-0 right-1 text-darkPurple hover:text-darkPurple"
+              className="absolute top-0 right-1 text-snow hover:text-champagne"
               onClick={handleClose}
             >
               <svg
@@ -105,7 +109,7 @@ const Resume2 = () => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

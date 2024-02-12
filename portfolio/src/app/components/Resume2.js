@@ -4,7 +4,9 @@ import downloadIcon from "/public/images/download-icon.png";
 import like from "/public/images/like.png";
 import { Star } from "./Icons";
 import { motion } from "framer-motion";
-
+import HireMe from "./HireMe";
+import tools from "/public/images/profile/tools.png"
+import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 // define the component handles the animation of the stars
 
 const AnimatedStars = ({ animateStars }) => {
@@ -32,14 +34,14 @@ const AnimatedStars = ({ animateStars }) => {
 
 // define the animated link component
 
-const AnimatedLink = ({ href, children, onClick }) => {
+const AnimatedLink = ({ href, children, onClick, className }) => {
   const commonClassName =
     "flex items-center justify-center  text-snow bg-darkPurple rounded-md hover:bg-snow hover:text-darkPurple text-lg font-semibold border-2 border-solid border-transparent hover:border-darkPurple shadow-lg hover:shadow-xl";
   return (
     <motion.a
       href={href}
       target="blank"
-      className={` relative ${commonClassName} px-6 py-2.5 mx-4`}
+      className={` relative ${commonClassName} ${className}`}
       download={true}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 1.1 }}
@@ -71,11 +73,19 @@ const Resume2 = () => {
 
   return (
     <>
-      <AnimatedLink href="/eman_hassan_cv.pdf" onClick={handleClick}>
+      <AnimatedLink
+        href="/eman_hassan_cv.pdf"
+        onClick={handleClick}
+        className={`px-6 py-2.5`}
+      >
         Resume
       </AnimatedLink>
 
-      <AnimatedLink href="/" onClick={handleClick}>
+      <AnimatedLink
+        href="/"
+        onClick={handleClick}
+        className={`ml-4 px-6 py-2.5`}
+      >
         Certificate
       </AnimatedLink>
 

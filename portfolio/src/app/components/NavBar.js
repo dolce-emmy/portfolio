@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import a from "next/link";
+import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
@@ -13,8 +13,7 @@ const CustomLink = ({ href, title, className }) => {
   console.log(path);
 
   return (
-    
-    <a href={href} className={`${className} relative group`}>
+    <Link href={href} className={`${className} relative group`}>
       {title}
 
       <span
@@ -28,7 +27,7 @@ const CustomLink = ({ href, title, className }) => {
       >
         &nbsp;
       </span>
-    </a>
+    </Link>
   );
 };
 
@@ -38,12 +37,17 @@ const NavBar = () => {
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
 
-        <CustomLink href="/about" title="About" className="mx-4" />
+        <CustomLink
+          router="/src/app/pages/about.js"
+          href="/about"
+          title="About"
+          className="mx-4"
+        />
 
         <CustomLink href="/projects" title="Projects" className="mx-4" />
 
         <CustomLink href="/articles" title="Articles" className="mx-4" />
-        
+
         <CustomLink href="/contact" title="Contact" className="ml-4" />
 
         {/* <CustomLink href="/contact" title="Contact" className="m-4" /> */}

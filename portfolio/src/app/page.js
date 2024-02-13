@@ -17,8 +17,9 @@ export default function Home() {
       {/* <Head>
       <link rel="icon" href="/favicon.ico" />
       </Head> */}
-      <NavBar />
+
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
+        <NavBar />
         <Template className="pt-0 ">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
@@ -52,6 +53,7 @@ export default function Home() {
               <div className="flex items-center self-start mt-2">
                 <Resume2 />
               </div>
+             
             </div>
           </div>
         </Template>

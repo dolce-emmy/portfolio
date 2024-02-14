@@ -48,3 +48,13 @@ body {
 .animate-stars {
   animation: stars 5s ease-out smooth infinite;   
 }
+
+.confetti {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Adjust the duration and easing function as needed */
+}
+
+.confetti-hidden {
+  opacity: 0;
+}
+

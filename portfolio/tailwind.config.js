@@ -20,6 +20,7 @@ module.exports = {
         snow: "#FFF7F5",
         darkPurple: "#27182D",
         cordovan: "#80363F",
+        // Flower: "#FFD700",
 
         // lightYellow: "#FCE0A2",
       },

@@ -10,7 +10,7 @@ import Resume from "./components/Resume";
 import Resume2 from "./components/Resume2";
 import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
-import about from "./about/page";
+
 export default function Home() {
   return (
     <>

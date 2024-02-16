@@ -2,14 +2,13 @@
 import NavBar from "./components/NavBar";
 import Image from "next/image";
 import profilePic from "/public/images/profile/developer-coding-hd.png";
-import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 import AnimatedText from "./components/AnimatedText";
-import Link from "next/link";
 import Template from "./components/Template";
 import Resume from "./components/Resume";
 import Resume2 from "./components/Resume2";
 import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
+
 
 export default function Home() {
   return (
@@ -56,6 +55,7 @@ export default function Home() {
              
             </div>
           </div>
+          
         </Template>
         <HireMe />
         {/* <div className="fixed right-4 bottom-1 inline-block w-28 ">

@@ -44,6 +44,7 @@ const NavBar = () => {
           className="mx-4"
         />
 
+        
         <CustomLink href="/projects" title="Projects" className="mx-4" />
 
         <CustomLink href="/articles" title="Articles" className="mx-4" />

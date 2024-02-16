@@ -1,48 +1,54 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useState, useEffect, useRef} from "react";
 import Head from "next/head";
 import AnimatedText from "../components/AnimatedText";
 import Template from "../components/Template";
 import NavBar from "../components/NavBar";
 import Image from "next/image";
 import profilePic from "/public/images/profile/eman.png";
-import profilePic2 from "/public/images/profile/eman3.png";
 import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
+import Skills from "../components/Skills";
 
 
 
 const about = () => {
-  const [showConfetti, setShowConfetti] = useState(false);
-  const Image2 = motion(Image);
-  const [brightness, setBrightness] = useState(false);
-  useEffect(() => {
 
-const handleScroll = () => {
-  // here I am saying if brightness is false, then set it to true 
-  if (!brightness) {
-    setBrightness(true);
-  }
-};
+    const Image2 = motion(Image);
+    const [showBulb, setShowBulb] = useState(true);
 
-window.addEventListener("scroll", handleScroll);
+    const profileRef =  useRef(null);
+    const bulbRef =  useRef(null);
 
-return () => {
+    useEffect(() => {
 
-  window.removeEventListener("scroll", handleScroll);
-};
-    // setShowConfetti(true);
+      const handleScroll = () => {
+        // here we are 
+        if (profileRef.current) {
+          const top = profileRef.current.getBoundingClientRect().top;
+          
+           const isScrolledToTop = window.scrollY === 0;
+          if (top < window.innerHeight || isScrolledToTop) {
+            setShowBulb(false);
+          }
+          
+          if (top > window.innerHeight || isScrolledToTop) {
+            setShowBulb(true);
+          }
 
-    // const timeoutId = setTimeout(() => {
-    //   setShowConfetti(false);
-    // }, 4000); // Adjust the duration (in milliseconds) as needed
+        }
+      }
 
-    // return () => {
-    //   clearTimeout(timeoutId);
-    // };
-  }, [brightness]);
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+
+    }, []);
+
+  
 
   return (
     <>
@@ -50,13 +56,7 @@ return () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-      {/* <Confetti
-        width={1920}
-        height={1080}
-        numberOfPieces={showConfetti ? 200 : 0}
-        // here the initial velocity controls the direction of the falling confetti and it's adjusted to 50 to make it fall in a straight line
-        initialVelocityY={50}
-      /> */}
+
       <NavBar />
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center">
@@ -74,7 +74,7 @@ return () => {
                   Greetings! I'm Eman, a passionate web developer captivated by
                   the limitless possibilities of the digital Landscape. On the
                   lookout for exciting opportunities to contribute my skills and
-                  passion to a forward-thinking team. my enthusiasm for web
+                  passion to a forward-thinking team. My enthusiasm for web
                   development runs deep, stemming from a genuine fascination
                   with technology and a desire to create meaningful digital
                   experiences.
@@ -97,13 +97,13 @@ return () => {
                 </p>
                 <p className=" py-3 font-medium">
                   What drew me to web development was the opportunity to blend
-                  creativity with technical skill, to craft digital experiences
+                  creativity with technical skills, to craft digital experiences
                   that resonate with users and leave a lasting impression. The
                   dynamic nature of the field, where innovation and evolution
                   are constant companions, excites me and motivates me to push
                   the boundaries of what's possible.
                 </p>
-                <h2 className="text-lg font-bold uppercase text-darkPurple/75">
+                <h2 className="py-3 text-lg font-bold uppercase text-darkPurple/75">
                   Let's Connect:
                 </h2>
                 <p className="font-medium">
@@ -121,24 +121,28 @@ return () => {
                   borderRadius: "50%",
                   overflow: "hidden",
                   width: "70%",
-                  height: "73%",
+                  height: "66%",
                   objectFit: "cover",
                   filter: "drop-shadow(#F9E7DD 2rem 2rem 10px)",
                 }}
               >
-                <Image
-                  src={profilePic}
-                  alt="Eman"
-                  priority
-                  className=" w-full h-auto"
-                  style={{
-                    // filter: "brightness(1.12)",
-                    filter: brightness ? "brightness(1.2)" : "none",
-                  }}
-                />
+                <div ref={profileRef} className="absolute top-0 -right-3 -z-10">
+                  <Image
+                    src={profilePic}
+                    alt="Eman"
+                    priority
+                    className=" w-full h-auto"
+                    style={{
+                      filter: "brightness(1.12)",
+                      // filter: brightness ? "brightness(1.12)" : "none",
+                    }}
+                  />
+                </div>
               </div>
 
-              <div className="fixed right-40 top-24 inline-block w-20">
+              <div
+                className={`fixed right-40 top-24 inline-block w-20 ${(showBulb) ? "opacity-100 transition-opacity duration-500 ease-in": "opacity-0 transition-opacity duration-500 ease-out"}`}
+              >
                 <Image2
                   src={lightBulb}
                   alt="light bulb"
@@ -157,6 +161,7 @@ return () => {
                 />
               </div>
             </div>
+            <Skills />
           </Template>
         </div>
       </main>

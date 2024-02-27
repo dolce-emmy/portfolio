@@ -61,7 +61,7 @@ const Resume = () => {
       </motion.a>
 
       <motion.a
-        href="/"
+        href="/certificate.pdf"
         target="blank"
         className={`${commonClassName} px-4 py-2.5 ml-4 relative`}
         download={true}

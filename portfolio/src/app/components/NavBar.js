@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
 import { motion } from "framer-motion";
 
+
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
   const router = useRouter();

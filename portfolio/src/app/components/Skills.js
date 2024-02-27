@@ -11,7 +11,7 @@ return (
         "
     whileHover={{ scale: 1.05 }}
     initial= {{x:0, y:0}}
-    animate={{ x:x, y:y }}
+    whileInView={{ x:x, y:y }}
     transition={{duration: 1.5}}
   >
     {name}
@@ -36,18 +36,18 @@ const Skills = () => {
           Web
         </motion.div>
 
-        <Skill name="HTML" x="-22vw" y="2vw" />
-        <Skill name="CSS" x="-5vw" y="-12vw" />
-        <Skill name="Javascript" x="20vw" y="6vw" />
-        <Skill name="ReactJS" x="0vw" y="12vw" />
-        <Skill name="NextJS" x="20vw" y="-15vw" />
+        <Skill name="HTML" x="-19vw" y="2vw" />
+        <Skill name="CSS" x="-5vw" y="-10vw" />
+        <Skill name="Javascript" x="23vw" y="6vw" />
+        <Skill name="ReactJS" x="0vw" y="10.5vw" />
+        <Skill name="NextJS" x="20vw" y="-14vw" />
         <Skill name="NodeJS" x="0vw" y="-18vw" />
-        <Skill name="Bootstrap" x="32vw" y="-5vw" />
+        <Skill name="Bootstrap" x="31vw" y="-5vw" />
         <Skill name="ExpressJS" x="-32vw" y="-5vw" />
         <Skill name="MongoDB" x="-20vw" y="-15vw" />
         <Skill name="Git" x="-31vw" y="18vw" />
         <Skill name="Linux" x="31vw" y="13vw" />
-        <Skill name="SCSS" x="-5vw" y="18vw" />
+        <Skill name="SCSS" x="-5vw" y="17.5vw" />
         <Skill name="Github" x="-38vw" y="5vw" />
       </div>
     </>

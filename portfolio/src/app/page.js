@@ -8,17 +8,26 @@ import Resume from "./components/Resume";
 import Resume2 from "./components/Resume2";
 import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
+import Loading from "./template/Loading";
+
 
 
 export default function Home() {
+
   return (
     <>
+      {/* {loading && (
+        <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-gray-800 opacity-75">
+          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
+        </div>
+      )} */}
       {/* <Head>
       <link rel="icon" href="/favicon.ico" />
       </Head> */}
-
+      <Loading loading={Loading} />
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
         <NavBar />
+        
         <Template className="pt-0 ">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
@@ -52,10 +61,8 @@ export default function Home() {
               <div className="flex items-center self-start mt-2">
                 <Resume2 />
               </div>
-             
             </div>
           </div>
-          
         </Template>
         <HireMe />
         {/* <div className="fixed right-4 bottom-1 inline-block w-28 ">

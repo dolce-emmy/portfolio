@@ -82,7 +82,7 @@ const Resume2 = () => {
       </AnimatedLink>
 
       <AnimatedLink
-        href="/"
+        href="/certificate.pdf"
         onClick={handleClick}
         className={`ml-4 px-6 py-2.5`}
       >

@@ -10,6 +10,7 @@ import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
 import Skills from "../components/Skills";
+import Loading from "../template/Loading";
 
 
 
@@ -57,7 +58,7 @@ const about = () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-
+        <Loading loading={Loading} />
       <NavBar />
       
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
@@ -118,17 +119,17 @@ const about = () => {
                 </p>
               </div>
               <div
-                className="col-span-3 relative"
+                className="col-span-3"
                 style={{
                   borderRadius: "50%",
                   overflow: "hidden",
                   width: "70%",
-                  height: "59%",
+                  height: "70%",
                   objectFit: "cover",
                   filter: "drop-shadow(#F9E7DD 2rem 2rem 10px)",
                 }}
               >
-                <div ref={profileRef} className="absolute top-0 -right-3 -z-10">
+                <div ref={profileRef} className="top-0 -z-10">
                   <Image
                     src={profilePic}
                     alt="Eman"

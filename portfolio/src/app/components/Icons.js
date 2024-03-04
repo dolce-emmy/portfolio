@@ -84,6 +84,7 @@ export const Github3Icon = ({ className, ...rest }) => (
       fill: "#000",
     }}
     viewBox="0 0 256 256"
+    className={`w-full h-auto ${className}`}
     {...rest}
   >
     <g

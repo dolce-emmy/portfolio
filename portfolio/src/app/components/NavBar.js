@@ -45,7 +45,6 @@ const NavBar = () => {
           className="mx-4"
         />
 
-        
         <CustomLink href="/projects" title="Projects" className="mx-4" />
 
         <CustomLink href="/articles" title="Articles" className="mx-4" />
@@ -73,7 +72,7 @@ const NavBar = () => {
           <Github3Icon />
         </motion.a>
         <motion.a
-          href="https://medium.com/@dolce-emmy/about"
+          href="https://medium.com/@dolce-emmy"
           target={"blank"}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 1.1 }}

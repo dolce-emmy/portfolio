@@ -9,6 +9,15 @@
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@assets/*": ["./src/assets/*"],
+      "@config/*": ["./src/config/*"],
+      "@context/*": ["./src/context/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@types/*": ["./src/types/*"],
+      "@test/*": ["./src/test/*"],
+      "@mocks/*": ["./src/mocks/*"],
+      "@public/*": ["./public/*"],
+      
+
       
      
       

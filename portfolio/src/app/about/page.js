@@ -3,7 +3,7 @@ import { useState, useEffect, useRef} from "react";
 import Head from "next/head";
 import AnimatedText from "../components/AnimatedText";
 import Template from "../components/Template";
-import NavBar from "../components/NavBar";
+
 import Image from "next/image";
 import profilePic from "/public/images/profile/eman.png";
 import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
@@ -58,8 +58,8 @@ const about = () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-        <Loading loading={Loading} />
-      <NavBar />
+        <Loading/>
+      
       
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center">

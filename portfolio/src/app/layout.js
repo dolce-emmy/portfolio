@@ -1,8 +1,8 @@
 'use client';
 import React from "react";
-import {useState, useRef, useEffect} from "react";
+// import {useState, useRef, useEffect} from "react";
 import { Montserrat } from "next/font/google";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import { useRouter } from "next/navigation";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -23,21 +23,20 @@ const metadata = {
 
 export default function RootLayout({ children }) {
 
-    const scrollRef = useRef(null)
+    // const scrollRef = useRef(null)
 
-    useEffect(()=>{
-        const scroll = new LocomotiveScroll({
-            el: scrollRef.current,
-            smooth: true,
+    // useEffect(()=>{
+    //   if(typeof document !== 'undefined') {
+    //     const scroll = new LocomotiveScroll({
+    //       el: scrollRef.current,
+    //       smooth: true,
+    //     });
 
-
-        });
-
-        return()=>{
-            scroll.destroy()
-        }
-
-    }, [])
+    //     return () => {
+    //       scroll.destroy();
+    //     };
+    //   }
+    // }, [])
  
 
 // const router = useRouter();
@@ -46,13 +45,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        ref={scrollRef}
+        // ref={scrollRef}
         className={`${montserrat.variable} bg-desert text-darkPurple w-full min-h-screen`}
       >
        
        
         <NavBar />
         {children}
+        
       </body>
     </html>
   );

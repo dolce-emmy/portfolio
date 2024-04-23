@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import AnimatedText from "../components/AnimatedText";
 import Template from "../components/Template";
@@ -10,47 +10,38 @@ import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
 import Skills from "../components/Skills";
-import Loading from "../template/Loading";
-
-
-
+import Loading from "../template/loading";
 
 const about = () => {
+  const Image2 = motion(Image);
+  const [showBulb, setShowBulb] = useState(true);
 
-    const Image2 = motion(Image);
-    const [showBulb, setShowBulb] = useState(true);
+  const profileRef = useRef(null);
+  const bulbRef = useRef(null);
 
-    const profileRef =  useRef(null);
-    const bulbRef =  useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      // here we are
+      if (profileRef.current) {
+        const top = profileRef.current.getBoundingClientRect().top;
 
-    useEffect(() => {
+        const isScrolledToTop = window.scrollY === 0;
+        if (top < window.innerHeight || isScrolledToTop) {
+          setShowBulb(false);
+        }
 
-      const handleScroll = () => {
-        // here we are 
-        if (profileRef.current) {
-          const top = profileRef.current.getBoundingClientRect().top;
-          
-           const isScrolledToTop = window.scrollY === 0;
-          if (top < window.innerHeight || isScrolledToTop) {
-            setShowBulb(false);
-          }
-          
-          if (top > window.innerHeight || isScrolledToTop) {
-            setShowBulb(true);
-          }
-
+        if (top > window.innerHeight || isScrolledToTop) {
+          setShowBulb(true);
         }
       }
+    };
 
-      window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-
-    }, []);
-
-  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -58,9 +49,8 @@ const about = () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-        <Loading/>
-      
-      
+      <Loading />
+
       <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center">
           <Template className="pt-8">
@@ -87,9 +77,9 @@ const about = () => {
                   I've immersed myself in the world of web development, learning
                   and experimenting with various technologies and frameworks. My
                   journey began with self-directed study, followed by intensive
-                  vocational training in the web development, where it further fueled
-                  my passion and equipped me with the skills to bring my ideas
-                  to life through code.
+                  vocational training in the web development, where it further
+                  fueled my passion and equipped me with the skills to bring my
+                  ideas to life through code.
                 </p>
                 <p className="font-medium">
                   Throughout my learning journey, I've undertaken a variety of
@@ -144,7 +134,11 @@ const about = () => {
               </div>
 
               <div
-                className={`fixed right-32 top-24 inline-block w-20 ${(showBulb) ? "opacity-100 transition-opacity duration-500 ease-in": "opacity-0 transition-opacity duration-500 ease-out"}`}
+                className={`fixed right-32 top-24 inline-block w-20 ${
+                  showBulb
+                    ? "opacity-100 transition-opacity duration-500 ease-in"
+                    : "opacity-0 transition-opacity duration-500 ease-out"
+                }`}
               >
                 <Image2
                   src={lightBulb}

@@ -19,7 +19,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {3
   return (
     <article
       className="w-full flex items-center justify-between text-darkPurple
-    rounded-3xl border border-solid border-darkPurple bg-champagne shadow-2xl p-12 overflow-hidden relative
+    rounded-3xl border border-solid border-snow bg-snow shadow-2xl shadow-champagne p-12 overflow-hidden relative
     "
     >
       <div
@@ -64,7 +64,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {3
           <Link
             href={link}
             target="blank"
-            className="ml-4 rounded-lg bg-snow text-darkPurple p-2 px-6 text-lg font-semibold hover:translate-y-1 hover:scale-110 transition duration-300 ease-in-out delay-150"
+            className="ml-4 rounded-lg bg-darkPurple text-snow p-2 px-6 text-lg font-semibold hover:translate-y-1 hover:scale-110 transition duration-300 ease-in-out delay-150"
           >
             Visit Projects
           </Link>
@@ -76,7 +76,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {3
 
 const Project = ({ title, type, img, link, github }) => {
   return (
-    <motion.article className="w-full flex flex-col items-center justify-center border border-darkPurple bg-champagne text-darkPurple p-6 relative rounded-2xl shadow-2xl">
+    <motion.article className="w-full flex flex-col items-center justify-center border border-snow bg-snow text-darkPurple p-6 relative rounded-2xl shadow-2xl shadow-champagne">
       <Link
         href={link}
         target="blank"

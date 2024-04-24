@@ -21,7 +21,8 @@ const about = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // here we are
+      // here we are saying if the profileRef is available then do the following code which is to check if the top of the profileRef is less than the window height or if the window is scrolled to the top then hide the bulb image 
+      
       if (profileRef.current) {
         const top = profileRef.current.getBoundingClientRect().top;
 
@@ -112,11 +113,12 @@ const about = () => {
                 className="col-span-3"
                 style={{
                   borderRadius: "50%",
+                  border: "1px solid snow",
                   overflow: "hidden",
                   width: "70%",
                   height: "70%",
                   objectFit: "cover",
-                  filter: "drop-shadow(#F9E7DD 2rem 2rem 10px)",
+                  filter: "drop-shadow(#F9E7DD 1rem 1.5rem 6px)",
                 }}
               >
                 <div ref={profileRef} className="top-0 -z-10">

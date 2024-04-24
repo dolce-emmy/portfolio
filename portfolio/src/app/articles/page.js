@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRef } from "react";
 import Head from "next/head";
 import Template from "../components/Template";
 import AnimatedText from "../components/AnimatedText";
@@ -7,30 +8,70 @@ import Image from "next/image";
 import Link from "next/link";
 import article1 from "/public/images/article1.jpg";
 import article2 from "/public/images/article2.jpg";
-import { motion } from "framer-motion";
+import article3 from "/public/images/article3.jpg";
+import { motion, useMotionValue } from "framer-motion";
 
 const FramerImage = motion(Image);
 
+const MovingImage = ({ title, img, link }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const imgRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    imgRef.current.style.display = "inline-block";
+    x.set(e.pageX);
+    y.set(-10);
+  };
+
+  const handleMouseLeave = (e) => {
+    imgRef.current.style.display = "none";
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <Link
+      href={link}
+      target="blank"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <h2 className="capitalize text-xl font-semibold hover:underline">
+        {title}
+      </h2>
+      <FramerImage
+        style={{ x: x, y: y }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
+        ref={imgRef}
+        src={img}
+        alt={title}
+        className="z-10 w-10 h-10 hidden absolute rounded-lg"
+      />
+    </Link>
+  );
+};
+
 const Article = ({ img, title, time, link }) => {
   return (
-    <li
-      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-snow  text-darkPurple first:mt-0 border border-solid border-darkPurple
-    border-r-4 border-b-4
+    <motion.li
+      initial={{ y: 200 }}
+      whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }}
+      
+      className="  relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-snow  text-darkPurple first:mt-0 border border-solid border-snow
+    shadow-2xl shadow-champagne 
     "
     >
-      <Link href={link} target="blank">
-        <h2 className="capitalize text-xl font-semibold hover:underline">
-          {title}
-        </h2>
-      </Link>
+      <MovingImage title={title} img={img} link={link} />
       <span className="text-darkPurple font-semibold pl-4">{time}</span>
-    </li>
+    </motion.li>
   );
 };
 
 const FeaturedArticle = ({ link, img, title, time, summary }) => {
   return (
-    <li className=" relative col-span-1 w-full p-4 bg-snow border border-solid border-darkPurple rounded-2xl shadow-2xl">
+    <li className=" relative col-span-1 w-full p-4 bg-snow border border-solid border-snow rounded-2xl shadow-2xl shadow-champagne">
       {/* <div
           className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark
       rounded-br-3xl
@@ -85,7 +126,7 @@ const articles = () => {
 
             <FeaturedArticle
               img={article2}
-              title="Resolving Framer Motion Compatibility in Next.js 14: The ‘use client’ Workaround"
+              title="How to Create a Glowing Lightbulb Effect in Next.js with Framer Motion, Tailwind CSS"
               summary="In this blog post, we’ll delve into the compatibility issues between Framer Motion and Next.js 14 and explore a simple yet effective workaround: the ‘use client’ directive."
               time="2 min read"
               link="https://medium.com/@dolce-emmy/resolving-framer-motion-compatibility-in-next-js-14-the-use-client-workaround-1ec82e5a0c75"
@@ -96,11 +137,10 @@ const articles = () => {
           </h2>
           <ul>
             <Article
-              title="Optimizing Image Loading in Next.js: Understanding Prioritization"
-              img=""
-              link="https://medium.com/@dolce-emmy/title-optimizing-image-loading-in-next-js-understanding-prioritization-e102a8bbb3f1"
-              time="2 min read"
-              
+              title="Embracing the Future: Why Next.js is Leading the Way"
+              img={article3}
+              time="3 min read"
+              link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"
             />
             <Article
               title="Next.js vs React.js: Understanding the Differences"
@@ -108,8 +148,22 @@ const articles = () => {
               time="3 min read"
               link="https://medium.com/@dolce-emmy/next-js-vs-react-js-understanding-the-differences-d5bb52afe1c5"
             />
+
             <Article
-              title="Embracing the Future: Why Next.js is Leading the Way"
+              title="Optimizing Image Loading in Next.js: Understanding Prioritization"
+              img=""
+              link="https://medium.com/@dolce-emmy/title-optimizing-image-loading-in-next-js-understanding-prioritization-e102a8bbb3f1"
+              time="2 min read"
+            />
+            <Article
+              title="Supercharge Your Next.js Website with Optimized Image Loading"
+              img=""
+              time="2 min read"
+              link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"
+            />
+
+            <Article
+              title="Demystifying Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js"
               img=""
               time="3 min read"
               link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"

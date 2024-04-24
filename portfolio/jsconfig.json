@@ -17,7 +17,8 @@
       "@mocks/*": ["./src/mocks/*"],
       "@public/*": ["./public/*"],
       "@node_modules/*": ["./node_modules/*"],
-      "@root/*": ["./"]
+      "@root/*": ["./"],
+      
     }
   }
 }

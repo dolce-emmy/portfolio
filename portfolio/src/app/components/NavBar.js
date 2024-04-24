@@ -5,8 +5,11 @@ import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
 import { motion } from "framer-motion";
-
-
+import hook from "../components/hooks/useThemeSwitcher";
+import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
+import SunIcon from "/public/images/svgs/sun.png";
+import MoonIcon from "/public/images/svgs/moon.png"
+import Image from "next/image";
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
   const router = useRouter();
@@ -33,6 +36,9 @@ const CustomLink = ({ href, title, className }) => {
 };
 
 const NavBar = () => {
+
+  const [mode, setMode] = useThemeSwitcher();
+
   return (
     <header className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert text-darkPurple">
       <nav>
@@ -82,6 +88,19 @@ const NavBar = () => {
         {/* <a href="/" target={"blank"}>
           T
         </a> */}
+
+        <motion.button
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 1.1 }}
+        onClick={() => {
+          setMode(mode === "dark" ? "light" : "dark");
+        }}
+        >
+          {mode === "dark" ? 
+          <Image src={SunIcon} alt="sun" property="true" className="w-12 fill-darkPurple"/> 
+          
+          : <Image src={MoonIcon} alt="moon" property="true" className="w-12 fill-darkPurple"/>}
+        </motion.button>
       </nav>
 
       <div className="absolute left-[50%] top-2 translate-x-[50%]">

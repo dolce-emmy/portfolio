@@ -1,10 +1,8 @@
 'use client';
 import React from "react";
-// import {useState, useRef, useEffect} from "react";
 import { Montserrat } from "next/font/google";
-// import LocomotiveScroll from "locomotive-scroll";
-import { useRouter } from "next/navigation";
 import "./globals.css";
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 import NavBar from "./components/NavBar";
 
 
@@ -23,36 +21,16 @@ const metadata = {
 
 export default function RootLayout({ children }) {
 
-    // const scrollRef = useRef(null)
-
-    // useEffect(()=>{
-    //   if(typeof document !== 'undefined') {
-    //     const scroll = new LocomotiveScroll({
-    //       el: scrollRef.current,
-    //       smooth: true,
-    //     });
-
-    //     return () => {
-    //       scroll.destroy();
-    //     };
-    //   }
-    // }, [])
  
-
-// const router = useRouter();
-
   
   return (
     <html lang="en">
       <body
-        // ref={scrollRef}
         className={`${montserrat.variable} bg-desert text-darkPurple w-full min-h-screen`}
       >
-       
-       
         <NavBar />
+        <LoadingSpinner />
         {children}
-        
       </body>
     </html>
   );

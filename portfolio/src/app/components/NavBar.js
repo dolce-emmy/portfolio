@@ -5,10 +5,9 @@ import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
 import { motion } from "framer-motion";
-import hook from "../components/hooks/useThemeSwitcher";
 import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import SunIcon from "/public/images/svgs/sun.png";
-import MoonIcon from "/public/images/svgs/moon.png"
+import MoonIcon from "/public/images/svgs/moon.png";
 import Image from "next/image";
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
@@ -26,7 +25,7 @@ const CustomLink = ({ href, title, className }) => {
       absolute left-0 -bottom-0.5 
       group-hover:w-full transition-[width] ease duration-300
       ${path === href ? "w-full" : "w-0"}
-      
+       dark:bg-snow
       `}
       >
         &nbsp;
@@ -36,11 +35,14 @@ const CustomLink = ({ href, title, className }) => {
 };
 
 const NavBar = () => {
-
   const [mode, setMode] = useThemeSwitcher();
 
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert text-darkPurple">
+    <header
+      className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert dark:bg-dark text-darkPurple
+    dark:text-snow shadow-md z-50
+    "
+    >
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
 
@@ -90,16 +92,27 @@ const NavBar = () => {
         </a> */}
 
         <motion.button
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 1.1 }}
-        onClick={() => {
-          setMode(mode === "dark" ? "light" : "dark");
-        }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 1.1 }}
+          onClick={() => {
+            setMode(mode === "dark" ? "light" : "dark");
+          }}
         >
-          {mode === "dark" ? 
-          <Image src={SunIcon} alt="sun" property="true" className="w-12 fill-darkPurple"/> 
-          
-          : <Image src={MoonIcon} alt="moon" property="true" className="w-12 fill-darkPurple"/>}
+          {mode === "dark" ? (
+            <Image
+              src={SunIcon}
+              alt="sun"
+              property="true"
+              className="w-12 fill-dark"
+            />
+          ) : (
+            <Image
+              src={MoonIcon}
+              alt="moon"
+              property="true"
+              className="w-12 fill-dark"
+            />
+          )}
         </motion.button>
       </nav>
 

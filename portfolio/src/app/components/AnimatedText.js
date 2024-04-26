@@ -38,7 +38,7 @@ const AnimatedText = ({ text, className = "" }) => {
     "
     >
       <motion.h1
-        className={`inline-block w-full text-darkPurple font-bold capitalize text-5xl ${className}`}
+        className={`inline-block w-full text-darkPurple dark:text-snow font-bold capitalize text-5xl ${className}`}
         variants={variant}
         initial="initial"
         animate="animate"
@@ -51,7 +51,6 @@ const AnimatedText = ({ text, className = "" }) => {
               key={word + "-" + index}
               className="inline-block"
               variants={singleVariant}
-              
             >
               {word}&nbsp;
             </motion.span>

@@ -10,6 +10,8 @@ import Resume2 from "./components/Resume2";
 import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
 import Loading from "./template/loading";
+import Head from "next/head";
+
 
 export default function Home() {
   return (
@@ -23,9 +25,12 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" />
       </Head> */}
       <Loading loading={Loading} />
-
-      <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
-        <Template className="pt-0 ">
+      <Head>
+        <title>Eman | Portfolio</title>
+        <meta name="description" content="This is Home page" />
+      </Head>
+      <main className="">
+        <Template className="pt-0">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
               <Image
@@ -44,7 +49,7 @@ export default function Home() {
                 className="text-left"
               />
 
-              <p className="my-4 text-base font-medium text-darkPurple">
+              <p className="my-4 text-base font-medium text-darkPurple dark:text-snow">
                 Hello World! I'm a passionate web developer on a journey of
                 self-discovery and skill-building. With a background as a
                 self-taught developer, I delved into the world of web

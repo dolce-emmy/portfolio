@@ -2,8 +2,9 @@
 import React from "react";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
+import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
+import { Light } from "./components/Icons";
 
 
 
@@ -19,17 +20,19 @@ const metadata = {
   
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, className="", dark="dark:bg-dark"}) {
 
- 
+ const [mode, setMode] = useThemeSwitcher();
+
+
   
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} bg-desert text-darkPurple w-full min-h-screen`}
+        className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen ${className}`}
       >
         <NavBar />
-        <LoadingSpinner />
+
         {children}
       </body>
     </html>

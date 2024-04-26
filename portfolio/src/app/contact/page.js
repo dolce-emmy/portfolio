@@ -75,22 +75,23 @@ const ContactForm = () => {
       </Head>
       <main className="min-h-screen">
         <div className="w-full flex flex-col items-center justify-center ">
-          <Template className="p-16">
+          <Template className="p-8">
             {/* <NextVideo
       className="w-full max-h-full"
        src={contactVideo} />; */}
 
-            <div className="grid w-full grid-cols-9 gap-16 pt-16">
+            <div className="grid w-full grid-cols-9 gap-16 p-8 ">
               <motion.div
                 className="col-span-4 rounded-full overflow-hidden"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20,  }}
               >
                 <Image
                   src={developer3}
                   alt="developer"
-                  className="w-full h-full object-cover"
+                  priority={true}
+                  className="w-full h-full object-cover rounded-full"
                 />
               </motion.div>
               <div className="col-span-4 w-full">

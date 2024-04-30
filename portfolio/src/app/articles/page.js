@@ -132,7 +132,7 @@ const articles = () => {
               link="https://medium.com/@dolce-emmy/resolving-framer-motion-compatibility-in-next-js-14-the-use-client-workaround-1ec82e5a0c75"
             />
           </ul>
-          <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
+          <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 dark:text-snow">
             All Articles
           </h2>
           <ul>
@@ -151,7 +151,7 @@ const articles = () => {
 
             <Article
               title="Optimizing Image Loading in Next.js: Understanding Prioritization"
-              img=""
+             
               link="https://medium.com/@dolce-emmy/title-optimizing-image-loading-in-next-js-understanding-prioritization-e102a8bbb3f1"
               time="2 min read"
             />

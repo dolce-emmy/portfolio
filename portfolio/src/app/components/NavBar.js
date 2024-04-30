@@ -40,14 +40,14 @@ const NavBar = () => {
   return (
     <header
       className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert dark:bg-dark text-darkPurple
-    dark:text-snow shadow-md z-50
+    dark:text-snow  z-50
     "
     >
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
 
         <CustomLink
-          router="/src/app/pages/about.js"
+          
           href="/about"
           title="About"
           className="mx-4"
@@ -97,19 +97,20 @@ const NavBar = () => {
           onClick={() => {
             setMode(mode === "dark" ? "light" : "dark");
           }}
+          
         >
           {mode === "dark" ? (
             <Image
               src={SunIcon}
               alt="sun"
-              property="true"
+              priority
               className="w-12 fill-dark"
             />
           ) : (
             <Image
               src={MoonIcon}
               alt="moon"
-              property="true"
+              priority
               className="w-12 fill-dark"
             />
           )}

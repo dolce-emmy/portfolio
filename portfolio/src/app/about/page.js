@@ -52,16 +52,16 @@ const about = () => {
       </Head>
       <Loading />
 
-      <main className="montserrat bg-desert text-darkPurple w-full min-h-screen">
+      <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center">
           <Template className="pt-8">
             <AnimatedText
               text="Let Passion Be The Light To Our Purpose!"
-              className="mb-16 text-darkPurple"
+              className="mb-16 "
             />
             <div className="grid w-full grid-cols-6 gap-16">
               <div className="col-span-3 flex flex-col items-start justify-start">
-                <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75">
+                <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75 dark:text-snow/75">
                   Welcome to Eman's Biography
                 </h2>
                 <p className="font-medium">
@@ -115,8 +115,8 @@ const about = () => {
                   borderRadius: "50%",
                   border: "1px solid snow",
                   overflow: "hidden",
-                  width: "70%",
-                  height: "70%",
+                  width: "76%",
+                  height: "60%",
                   objectFit: "cover",
                   filter: "drop-shadow(#F9E7DD 1rem 1.5rem 6px)",
                 }}
@@ -126,7 +126,7 @@ const about = () => {
                     src={profilePic}
                     alt="Eman"
                     priority
-                    className=" w-full h-auto"
+                    className="w-full h-auto"
                     style={{
                       filter: "brightness(1.12)",
                       // filter: brightness ? "brightness(1.12)" : "none",

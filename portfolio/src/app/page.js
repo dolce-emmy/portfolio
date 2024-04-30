@@ -49,7 +49,7 @@ export default function Home() {
                 className="text-left"
               />
 
-              <p className="my-4 text-base font-medium text-darkPurple dark:text-snow">
+              <p className="my-4 text-base  text-darkPurple dark:text-snow">
                 Hello World! I'm a passionate web developer on a journey of
                 self-discovery and skill-building. With a background as a
                 self-taught developer, I delved into the world of web

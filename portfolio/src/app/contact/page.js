@@ -1,7 +1,8 @@
 "use client";
-
 import React, { useState, useRef } from "react";
 import envelopeIcon from "/public/images/svgs/lady-with-envelope-100.png";
+import envelopeIcon2 from "/public/images/svgs/lady-with-envelope-102.png";
+import envelopeIcon3 from "/public/images/svgs/lady-with-envelope-103.png";
 import removeIcon from "/public/images/svgs/remove.png";
 import Image from "next/image";
 import Head from "next/head";
@@ -24,6 +25,33 @@ const ContactForm = () => {
     formData.forEach((value, key) => {
       object[key] = value;
     });
+
+    // Email validation
+    const email = formData.get("email");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      const result = document.getElementById("result");
+      result.innerHTML = "Please provide a valid email address";
+      result.classList.remove("text-gray-500");
+      result.classList.add("text-red-500");
+      return;
+    }
+
+    // Abusive content detection
+      const message = formData.get("message");
+      const abusiveWords = ["abusive", "bad", "offensive", "fuck","cunt","stupid","twat", "dick", "bullocks", "pussy",]; // Add more abusive words here
+      const isAbusive = abusiveWords.some((word) =>
+      message.toLowerCase().includes(word.toLowerCase())
+      );
+      if (isAbusive) {
+        const result = document.getElementById("result");
+        result.innerHTML =
+          "Your message contains abusive content. Please revise.";
+        result.classList.remove("text-gray-500");
+        result.classList.add("text-red-500");
+        return;
+      }
+    
     const json = JSON.stringify(object);
     const result = document.getElementById("result");
     result.innerHTML = "Please wait...";
@@ -41,6 +69,7 @@ const ContactForm = () => {
       if (response.status === 200) {
         const jsonResponse = await response.json();
         result.innerHTML = jsonResponse.message;
+
         result.classList.remove("text-gray-500");
         result.classList.add("text-green-500");
       } else {
@@ -60,7 +89,10 @@ const ContactForm = () => {
     setTimeout(() => {
       result.style.display = "none";
     }, 5000);
+
+    result.style.display = "block"; // Show the result
     form.classList.add("was-validated");
+
   };
 
   const toggleWidget = () => {
@@ -73,7 +105,7 @@ const ContactForm = () => {
         <title>Eman | projects Page</title>
         <meta name="description" content="This is contact page" />
       </Head>
-      <main className="min-h-screen">
+      <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
           <Template className="p-8">
             {/* <NextVideo
@@ -82,24 +114,32 @@ const ContactForm = () => {
 
             <div className="grid w-full grid-cols-9 gap-16 p-8 ">
               <motion.div
-                className="col-span-4 rounded-full overflow-hidden"
+                className="col-span-3 overflow-hidden"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut", type: "spring", stiffness: 260, damping: 20,  }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.5,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 10,
+                }}
               >
                 <Image
                   src={developer3}
                   alt="developer"
                   priority={true}
-                  className="w-full h-full object-cover rounded-full"
+                  quality={100}
+                  className="w-full  object-cover rounded-full"
                 />
               </motion.div>
               <div className="col-span-4 w-full">
                 <AnimatedText
                   text={"Where Communication Builds Bridges, Let's Connect!"}
-                className="text-left pt-40"
+                  className="text-left pt-28"
                 />
-                <p className=" my-4 text-base  text-darkPurple">
+                <p className=" my-4 text-base  text-darkPurple dark:text-snow">
                   Ready to take your project to the next level? Let's
                   collaborate and turn your vision into a stunning reality.
                   Whether you're looking to create a sleek and professional
@@ -133,8 +173,8 @@ const ContactForm = () => {
                       >
                         <input
                           type="hidden"
-                          name="apikey"
-                          value="YOUR_ACCESS_KEY_HERE"
+                          name="access_key"
+                          value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY}
                         />
                         <input
                           type="hidden"
@@ -178,10 +218,11 @@ const ContactForm = () => {
                             type="email"
                             name="email"
                             id="email"
-                            placeholder="eman.yassin83@gmail.com"
+                            placeholder="john.doe@gmail.com"
                             required
                             className="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
                           />
+
                           {/* <div className="empty-feedback text-red-400 text-sm mt-1">
                   Please provide your email address.
                 </div>
@@ -240,10 +281,10 @@ const ContactForm = () => {
                     // transition={{ duration: 0.2 }}
                   >
                     {!open ? (
-                      <Image src={removeIcon} alt="close" />
+                      <Image src={removeIcon} alt="close" priority />
                     ) : (
                       <>
-                        <Image src={envelopeIcon} alt="envelope" />
+                        <Image src={envelopeIcon2} alt="envelope" priority />
                         <motion.p
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}

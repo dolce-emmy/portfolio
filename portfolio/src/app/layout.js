@@ -4,7 +4,6 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
-import { Light } from "./components/Icons";
 
 
 
@@ -20,17 +19,18 @@ const metadata = {
   
 };
 
-export default function RootLayout({ children, className="", dark="dark:bg-dark"}) {
+export default function RootLayout({ children, className="", }) {
 
- const [mode, setMode] = useThemeSwitcher();
+
 
 
   
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen ${className}`}
+        className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen dark:bg-dark ${className}`}
       >
+        
         <NavBar />
 
         {children}

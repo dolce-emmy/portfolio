@@ -114,7 +114,7 @@ const ContactForm = () => {
 
             <div className="grid w-full grid-cols-9 gap-16 p-8 ">
               <motion.div
-                className="col-span-3 overflow-hidden"
+                className="col-span-3 overflow-hidden mt-8"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -134,10 +134,10 @@ const ContactForm = () => {
                   className="w-full  object-cover rounded-full"
                 />
               </motion.div>
-              <div className="col-span-4 w-full">
+              <div className="col-span-4 w-full pt-24">
                 <AnimatedText
                   text={"Where Communication Builds Bridges, Let's Connect!"}
-                  className="text-left pt-24"
+                  className="text-left "
                 />
                 <p className=" my-4 text-base  text-darkPurple dark:text-snow">
                   Ready to take your project to the next level? Let's
@@ -150,7 +150,7 @@ const ContactForm = () => {
                   touch – I can't wait to hear from you!
                 </p>
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2">
                 {!open && (
                   <div
                     id="w3f__widget--content"

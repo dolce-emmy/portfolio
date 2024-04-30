@@ -7,7 +7,7 @@ const Skill = ({name, x, y}) => {
 return (
   <motion.div
     className="flex items-center justify-center rounded-full font-semibold bg-darkPurple text-snow
-        py-3 px-6 shadow-darkPurple cursor-pointer absolute
+        py-3 px-6 shadow-darkPurple cursor-pointer absolute  dark:bg-snow dark:text-darkPurple
         "
     whileHover={{ scale: 1.05 }}
     initial= {{x:0, y:0}}
@@ -26,10 +26,10 @@ const Skills = () => {
   return (
     <>
       <h2 className="font-bold text-8xl mt-64 text-center">Skills</h2>
-      <div className="w-full h-screen relative flex items-center justify-center bg-circularLight">
+      <div className="w-full h-screen relative flex items-center justify-center bg-circularLight dark:bg-circularDark -z-10">
         <motion.div
-          className="flex items-center justify-center rounded-full font-semibold bg-darkPurple text-snow
-        p-8 shadow-darkPurple cursor-pointer
+          className="flex items-center justify-center rounded-full font-semibold bg-darkPurple  text-snow 
+        p-8 shadow-darkPurple cursor-pointer dark:bg-snow dark:text-darkPurple
         "
           whileHover={{ scale: 1.05 }}
         >

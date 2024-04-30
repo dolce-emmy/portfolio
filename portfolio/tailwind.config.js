@@ -40,10 +40,10 @@ module.exports = {
       backgroundImage: {
         circularLight:
           "repeating-radial-gradient(rgb(0,0,0.4) 2px, #E1C8B2 5px, #E1C8B2 100px)",
+        circularDark:
+          "repeating-radial-gradient(rgb(255,255,255,0.4) 2px, #1b1b1b 5px, #1b1b1b 100px)",
       },
     },
   },
-  plugins: [
-    require('autoprefixer'),
-  ],
+  plugins: [require("autoprefixer")],
 };

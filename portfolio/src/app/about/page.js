@@ -118,7 +118,7 @@ const about = () => {
                   // width: "75%",
                   // height: "60%",
                   // objectFit: "cover",
-                  filter: "drop-shadow(#F9E7DD 1rem 1.5rem 6px)",
+                  filter: "drop-shadow(#F9E7DD 1rem 1rem 6px)",
                 }}
               >
                 <div ref={profileRef} className="top-0 -z-10">

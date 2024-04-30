@@ -129,7 +129,7 @@ const articles = () => {
               title="How to Create a Glowing Lightbulb Effect in Next.js with Framer Motion, Tailwind CSS"
               summary="In this blog post, we’ll delve into the compatibility issues between Framer Motion and Next.js 14 and explore a simple yet effective workaround: the ‘use client’ directive."
               time="2 min read"
-              link="https://medium.com/@dolce-emmy/resolving-framer-motion-compatibility-in-next-js-14-the-use-client-workaround-1ec82e5a0c75"
+              link="https://medium.com/@dolce-emmy/how-to-create-a-glowing-lightbulb-effect-in-next-js-with-framer-motion-and-tailwind-css-3c4ee4d6426e"
             />
           </ul>
           <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 dark:text-snow">
@@ -151,7 +151,6 @@ const articles = () => {
 
             <Article
               title="Optimizing Image Loading in Next.js: Understanding Prioritization"
-             
               link="https://medium.com/@dolce-emmy/title-optimizing-image-loading-in-next-js-understanding-prioritization-e102a8bbb3f1"
               time="2 min read"
             />

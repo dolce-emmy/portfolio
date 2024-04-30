@@ -10,6 +10,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Github3Icon } from "../components/Icons";
 import project1 from "/public/images/projects/friendfusion.png";
+import project2 from "/public/images/projects/Luxevivre.png";
+import project3 from "/public/images/projects/pilot_coder.png";
 
 
 const FramerImage = motion(Image);
@@ -161,8 +163,8 @@ const projects = () => {
               <div className="col-span-6">
                 Project-1
                 <Project
-                  title="FriendFusion Social Media"
-                  img={project1}
+                  title="LuxeVivre Restaurant"
+                  img={project2}
                   summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
                 kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
                   link="https://friend-fusion-social-media-website.onrender.com/"
@@ -173,8 +175,8 @@ const projects = () => {
               <div className="col-span-6">
                 Project-2
                 <Project
-                  title="FriendFusion Social Media"
-                  img={project1}
+                  title="Pilot Coder News"
+                  img={project3}
                   summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
                 kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
                   link="https://friend-fusion-social-media-website.onrender.com/"

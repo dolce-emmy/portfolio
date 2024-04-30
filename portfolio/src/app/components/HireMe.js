@@ -18,7 +18,7 @@ const HireMe = () => {
           className={"fill-darkPurple animate-spin-slow dark:fill-snow "}
         />
         <motion.a
-          // href="/contact"
+          href="/contact"
           className="flex items-center justify-center text-darkPurple
       absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md
       border border-solid border-darkPurple w-20 h-20 rounded-full font-semibold

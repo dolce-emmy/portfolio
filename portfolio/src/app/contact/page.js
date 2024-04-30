@@ -137,7 +137,7 @@ const ContactForm = () => {
               <div className="col-span-4 w-full">
                 <AnimatedText
                   text={"Where Communication Builds Bridges, Let's Connect!"}
-                  className="text-left pt-28"
+                  className="text-left pt-24"
                 />
                 <p className=" my-4 text-base  text-darkPurple dark:text-snow">
                   Ready to take your project to the next level? Let's

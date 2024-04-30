@@ -156,7 +156,7 @@ const projects = () => {
                   summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
                 kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
                   link="https://friend-fusion-social-media-website.onrender.com/"
-                  github="/"
+                  github="https://github.com/dolce-emmy/FriendFusion"
                   type="Featured Project"
                 />
               </div>
@@ -167,8 +167,8 @@ const projects = () => {
                   img={project2}
                   summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
                 kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
-                  link="https://friend-fusion-social-media-website.onrender.com/"
-                  github="/"
+                  link="/"
+                  github="https://github.com/dolce-emmy/LuxeVivre/tree/main/LuxeVivre"
                   type="Featured Project"
                 />
               </div>
@@ -180,7 +180,7 @@ const projects = () => {
                   summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
                 kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
                   link="https://friend-fusion-social-media-website.onrender.com/"
-                  github="/"
+                  github="https://github.com/dolce-emmy/News-App"
                   type="Featured Project"
                 />
               </div>

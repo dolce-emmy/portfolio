@@ -107,14 +107,14 @@ const ContactForm = () => {
       </Head>
       <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
-          <Template className="p-8">
+          <Template className="p-16">
             {/* <NextVideo
       className="w-full max-h-full"
        src={contactVideo} />; */}
 
             <div className="grid w-full grid-cols-9 gap-16 p-8 ">
               <motion.div
-                className="col-span-3 overflow-hidden mt-8"
+                className="col-span-3 overflow-hidden"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -134,12 +134,12 @@ const ContactForm = () => {
                   className="w-full  object-cover rounded-full"
                 />
               </motion.div>
-              <div className="col-span-4 w-full pt-24">
+              <div className="col-span-4 w-full">
                 <AnimatedText
                   text={"Where Communication Builds Bridges, Let's Connect!"}
-                  className="text-left "
+                  className="text-left pt-40"
                 />
-                <p className=" my-4 text-base  text-darkPurple dark:text-snow">
+                <p className=" my-4 text-base text-lg  text-darkPurple dark:text-snow">
                   Ready to take your project to the next level? Let's
                   collaborate and turn your vision into a stunning reality.
                   Whether you're looking to create a sleek and professional

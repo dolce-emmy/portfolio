@@ -114,7 +114,7 @@ const ContactForm = () => {
 
             <div className="grid w-full grid-cols-9 gap-16 p-8 ">
               <motion.div
-                className="col-span-3 overflow-hidden"
+                className="col-span-3 overflow-hidden mt-8"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{

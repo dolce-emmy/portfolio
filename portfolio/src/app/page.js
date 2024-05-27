@@ -1,6 +1,4 @@
 "use client";
-import { useEffect } from "react";
-
 import Image from "next/image";
 import profilePic from "/public/images/profile/developer-coding-hd.png";
 import AnimatedText from "./components/AnimatedText";
@@ -21,14 +19,14 @@ export default function Home() {
           <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
         </div>
       )} */}
-      {/* <Head>
-      <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-      <Loading loading={Loading} />
       <Head>
+      <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Loading loading={Loading} />
+      {/* <Head>
         <title>Eman | Portfolio</title>
         <meta name="description" content="This is Home page" />
-      </Head>
+      </Head> */}
       <main className="">
         <Template className="pt-0">
           <div className="flex items-center justify-between w-full">
@@ -38,6 +36,9 @@ export default function Home() {
                 alt="developer girl coding"
                 className="w-full h-auto"
                 priority
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              55vw"
               />
             </div>
 

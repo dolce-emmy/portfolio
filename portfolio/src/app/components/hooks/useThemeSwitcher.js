@@ -1,5 +1,5 @@
 'use client';
-import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react';
 
 const useThemeSwitcher = () => {
 
@@ -45,7 +45,7 @@ useEffect(() => {
         mediaQuery.removeEventListener("change", handleChange);
     }
 
-},[])
+},[]);
 
 
 useEffect(() => {
@@ -61,9 +61,9 @@ if (mode === "dark") {
     
 }
 
-}, [mode])
+}, [mode]);
 
-return [mode, setMode]
+return [mode, setMode];
 
 }
 

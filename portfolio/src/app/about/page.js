@@ -54,7 +54,7 @@ const about = () => {
 
       <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center">
-          <Template className="pt-8">
+          <Template className="pt-10">
             <AnimatedText
               text="Let Passion Be The Light To Our Purpose!"
               className="mb-16 "
@@ -114,7 +114,7 @@ const about = () => {
                 style={{
                   borderRadius: "50%",
                   border: "1px solid snow",
-                  
+
                   // width: "75%",
                   // height: "60%",
                   // objectFit: "cover",
@@ -126,6 +126,9 @@ const about = () => {
                     src={profilePic}
                     alt="Eman"
                     priority
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                     className="rounded-full w-full"
                     style={{
                       filter: "brightness(1.12)",
@@ -136,7 +139,7 @@ const about = () => {
               </div>
 
               <div
-                className={`fixed right-32 top-24 inline-block w-20 ${
+                className={`fixed right-36 top-28 inline-block w-20 ${
                   showBulb
                     ? "opacity-100 transition-opacity duration-500 ease-in"
                     : "opacity-0 transition-opacity duration-500 ease-out"
@@ -147,6 +150,9 @@ const about = () => {
                   alt="light bulb"
                   className="w-full h-auto"
                   priority
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                   style={{
                     filter:
                       "drop-shadow(0 0 20px #FFD700) drop-shadow(0 0 30px #FFF7F5) drop-shadow(0 0 40px #FFF7F5)",

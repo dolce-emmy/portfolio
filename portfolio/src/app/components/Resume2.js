@@ -5,7 +5,7 @@ import like from "/public/images/like.png";
 import { Star } from "./Icons";
 import { motion } from "framer-motion";
 import HireMe from "./HireMe";
-import tools from "/public/images/profile/tools.png"
+import tools from "/public/images/profile/tools.png";
 import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 // define the component handles the animation of the stars
 
@@ -67,16 +67,16 @@ const Resume2 = () => {
     }, 1000);
   };
 
-  // const handleClose = () => {
-  //   setShowThankYou(false);
-  // };
+  const handleClose = () => {
+    setShowThankYou(false);
+  };
 
   return (
     <>
       <AnimatedLink
         href="/eman_hassan_cv.pdf"
         onClick={handleClick}
-        className={`px-6 py-2.5`}
+        className={`px-6 py-2.5 md:px-4 md:py-2`}
       >
         Resume
       </AnimatedLink>
@@ -84,17 +84,21 @@ const Resume2 = () => {
       <AnimatedLink
         href="/certificate.pdf"
         onClick={handleClick}
-        className={`ml-4 px-6 py-2.5`}
+        className={`ml-4 px-6 py-2.5 md:px-4 md:py-2`}
       >
         Certificate
       </AnimatedLink>
 
       <AnimatedStars animateStars={animateStars} />
 
-      {/* {showThankYou && (
-        <div className="fixed bottom-2 end-2 ">
-          <div className="bg-darkPurple rounded-lg p-4 shadow-lg">
-            <p className="text-lg font-semibold text-center text-snow">
+      {showThankYou && (
+        <motion.div className="fixed bottom-4 end-2 m-2 "
+        initial={{ scale:0, opacity: 0, }}
+        animate={{ scale:1,  opacity: 1, }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 260, damping: 20,}}
+        >
+          <div className="bg-darkPurple rounded-lg px-6 py-2.5 md:px-4 md:py-2 shadow-lg">
+            <p className="text-lg font-semibold text-center text-snow p-1">
               Downloaded Successfully
               <Image src={like} alt="like icon" className="w-10 inline ml-2" />
             </p>
@@ -118,8 +122,8 @@ const Resume2 = () => {
               </svg>
             </button>
           </div>
-        </div>
-      )} */}
+        </motion.div>
+      )}
     </>
   );
 };

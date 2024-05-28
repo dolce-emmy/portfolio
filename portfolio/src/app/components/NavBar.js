@@ -52,16 +52,15 @@ const handleClick = () => {
   return (
 
     // here we are using a button instead of a link because we want to trigger the toggle function when we click on the button
-    <button href={href} className={`${className} relative group`} onClick={handleClick}>
+    <button href={href} className={`${className} relative group text-snow dark:text-dark my-2 `} onClick={handleClick}>
       {title}
 
       <span
         className={`
-      h-[2px] inline-block w-0 bg-darkPurple
-      absolute left-0 -bottom-0.5 
+      h-[2px] inline-block w-0 bg-snow    absolute left-0 -bottom-0.5 
       group-hover:w-full transition-[width] ease duration-300
       ${path === href ? "w-full" : "w-0"}
-       dark:bg-snow
+       dark:bg-dark
       `}
       >
         &nbsp;
@@ -84,7 +83,7 @@ const NavBar = () => {
   return (
     <header
       className="w-full px-32 py-8 font-medium flex items-center justify-between montserrat bg-desert dark:bg-dark text-darkPurple
-    dark:text-snow relative
+    dark:text-snow relative lg:px-16 md:px-12 sm:px-8 xs:px-4
     "
     >
       {/* here is the hamburger menu that will be displayed on mobile or tablet screens so it's hidden until the screen is at max-width: 1023px then it will be displayed */}
@@ -185,51 +184,54 @@ const NavBar = () => {
 {/* here we are making a condition to trigger the toggle for the hamburger menu for the mobile so if the menu is open to render all the elements */}
       {
         isMenuOpen && 
-        <div
+        <motion.div
+        initial={{scale:0, opacity: 0, x: "-50%", y: "-50%"}}
+        animate={{ scale:1, opacity: 1 }}
           className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
       bg-darkPurple/90 dark:bg-snow/75 text-snow  rounded-lg backdrop-blur-md shadow-lg py-32 
       "
         >
+
           <nav className="flex flex-col justify-center">
             <CustomMobileLink
               href="/"
               title="Home"
-              className="mr-4"
+              className=""
               toggle={toggleMenu}
             />
 
             <CustomMobileLink
               href="/about"
               title="About"
-              className="mx-4"
+              className=""
               toggle={toggleMenu}
             />
 
             <CustomMobileLink
               href="/projects"
               title="Projects"
-              className="mx-4"
+              className=""
               toggle={toggleMenu}
             />
 
             <CustomMobileLink
               href="/articles"
               title="Articles"
-              className="mx-4"
+              className=""
               toggle={toggleMenu}
             />
 
             <CustomMobileLink
               href="/contact"
               title="Contact"
-              className="ml-4"
+              className=""
               toggle={toggleMenu}
             />
 
             {/* <CustomLink href="/contact" title="Contact" className="m-4" /> */}
           </nav>
 
-          <nav className=" flex items-center justify-center flex-wrap">
+          <nav className=" flex items-center justify-center flex-wrap mt-2">
             <motion.a
               href="https://www.linkedin.com/in/emanwebdev/"
               target={"blank"}
@@ -283,10 +285,10 @@ const NavBar = () => {
             </motion.button>
           </nav>
 
-        </div>
+        </motion.div>
       }
 
-      <div className="absolute left-[50%] top-2 translate-x-[50%]">
+      <div className="absolute left-[50%] top-2 translate-x-[50%] md:translate-x-0">
         <Logo />
       </div>
     </header>

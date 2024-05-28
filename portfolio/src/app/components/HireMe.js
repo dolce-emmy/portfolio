@@ -10,12 +10,12 @@ const HireMe = () => {
   return (
     <div
       className="fixed left-2 bottom-0
-    flex items-center justify-center overflow-hidden
+    flex items-center justify-center overflow-hidden md:right-6 md:left-auto md:top-0 md:bottom-auto md:absolute
     "
     >
-      <div className="w-40 h-auto flex items-center justify-center relative">
+      <div className="w-40 h-auto flex items-center justify-center relative md:w-24">
         <CircularText
-          className={"fill-darkPurple animate-spin-slow dark:fill-snow "}
+          className={"fill-darkPurple animate-spin-slow dark:fill-snow"}
         />
         <motion.a
           href="/contact"
@@ -23,6 +23,7 @@ const HireMe = () => {
       absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md
       border border-solid border-darkPurple w-20 h-20 rounded-full font-semibold
       hover:text-snow dark:bg-snow hover:dark:text-snow hover:dark:border-snow
+      md:w-12 md:h-12 md:text-[10px]
       
       "
           whileHover={{

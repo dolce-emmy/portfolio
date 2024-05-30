@@ -26,7 +26,7 @@ const Skills = () => {
   return (
     <>
       <h2 className="font-bold text-8xl mt-64 text-center">Skills</h2>
-      <div className="w-full h-screen relative flex items-center justify-center bg-circularLight dark:bg-circularDark -z-10">
+      <div className="w-full h-screen relative flex items-center justify-center bg-circularLight dark:bg-circularDark z-0">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-darkPurple  text-snow 
         p-8 shadow-darkPurple cursor-pointer dark:bg-snow dark:text-darkPurple

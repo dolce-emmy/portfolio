@@ -146,7 +146,7 @@ const projects = () => {
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5, ease: easeInOut }}
         >
-          <Template className="pt-16">
+          <Template className="pt-16 p-28">
             <AnimatedText
               text={"Dreams in Action: Turning Imagination into Reality!"}
               className="mb-16"

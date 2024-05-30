@@ -113,7 +113,7 @@ const articles = () => {
         <meta name="description" content="This is articles page" />
       </Head>
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
-        <Template className="pt-16">
+        <Template className="pt-16 p-28">
           <AnimatedText
             text="Feed your intellect, feed your soul!"
             className="mb-16"

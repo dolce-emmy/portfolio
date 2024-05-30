@@ -53,15 +53,15 @@ const about = () => {
       <Loading />
 
       <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
-        <div className="flex w-full flex-col items-center justify-center">
-          <Template className="pt-10">
+        <div className="flex w-full flex-col items-center justify-center xs:p-0">
+          <Template className="pt-20 p-28 sm:p-16 xs:p-10">
             <AnimatedText
               text="Let Passion Be The Light To Our Purpose!"
-              className="mb-16 "
+              className="mb-16  lg:!text-5xl sm:!text-4xl xs:!text-4xl sm:mb-8 lg:text-center"
             />
-            <div className="grid w-full grid-cols-6 gap-16">
-              <div className="col-span-3 flex flex-col items-start justify-start">
-                <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75 dark:text-snow/">
+            <div className="grid w-full grid-cols-8 grid-rows[200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px] gap-8 md:gap-4  sm:gap-4">
+              <div className="col-span-4 row-span-4 flex flex-col items-start justify-start xl:col-span-8 xl:col-start-3 xl:col-end-8 md:col-start-2 md:col-span-8 xl:justify-center xl:row-start-4 xl:row-end-8 xl:pt-5">
+                <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75 dark:text-snow/75">
                   Welcome to Eman's Biography
                 </h2>
                 <p className="font-medium">
@@ -110,7 +110,7 @@ const about = () => {
                 </p>
               </div>
               <div
-                className="col-span-3 rounded-full overflow-hidden relative w-96 h-96"
+                className="col-span-3 col-end-9 row-start-1 row-end-4 xl:col-span-8 xl:col-start-3 xl:col-end-8 md:col-start-2 md:col-end-8 md:col-span-4 sm:col-start-1 sm:col-end-8 xs:col-start-4 xs:col-end-8  rounded-full overflow-hidden relative w-96 h-96 xs:w-20 xs:h-20"
                 style={{
                   borderRadius: "50%",
                   border: "1px solid snow",
@@ -126,9 +126,9 @@ const about = () => {
                     src={profilePic}
                     alt="Eman"
                     priority
-                    sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+                    //       sizes="(max-width: 768px) 100vw,
+                    // (max-width: 1200px) 50vw,
+                    // 33vw"
                     className="rounded-full w-full"
                     style={{
                       filter: "brightness(1.12)",
@@ -139,7 +139,7 @@ const about = () => {
               </div>
 
               <div
-                className={`fixed right-36 top-28 inline-block w-20 ${
+                className={`xl:right-14 xl:left-auto lg:hidden fixed left-auto right-28 bottom:auto top-32 inline-block w-20 ${
                   showBulb
                     ? "opacity-100 transition-opacity duration-500 ease-in"
                     : "opacity-0 transition-opacity duration-500 ease-out"

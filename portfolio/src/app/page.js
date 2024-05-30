@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       )} */}
       <Head>
-      <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Loading loading={Loading} />
       {/* <Head>
@@ -28,7 +28,7 @@ export default function Home() {
         <meta name="description" content="This is Home page" />
       </Head> */}
       <main className="">
-        <Template className="pt-0 md:pt-16 sm:pt-8">
+        <Template className="pt-0 md:pt-16 sm:pt-8 p-28">
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
               <Image
@@ -42,7 +42,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="w-1/2 flex flex-col items-center self-center lg:w-full ">
+            <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center ">
               <AnimatedText
                 text={
                   "From Lines of Code to Digital Magic, I'm Eman, a Web Developer."
@@ -55,11 +55,11 @@ export default function Home() {
                 self-discovery and skill-building. With a background as a
                 self-taught developer, I delved into the world of web
                 development driven by curiosity and a thirst for knowledge. I
-                completed a comprehensive web development course, where I gained
-                essential skills and practical experience to complement my
-                self-taught journey. I'm dedicated to pushing the boundaries of
-                what's possible in the digital realm. Explore my portfolio to
-                see a glimpse of my work.
+                completed further training (Weiterbildung) as a web developer,
+                where I gained essential skills and practical experience to
+                complement my self-taught journey. I'm dedicated to pushing the
+                boundaries of what's possible in the digital realm. Explore my
+                portfolio to see a glimpse of my work.
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Resume2 />

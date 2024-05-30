@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
-import envelopeIcon from "/public/images/svgs/lady-with-envelope-100.png";
+
 import envelopeIcon2 from "/public/images/svgs/lady-with-envelope-102.png";
-import envelopeIcon3 from "/public/images/svgs/lady-with-envelope-103.png";
 import removeIcon from "/public/images/svgs/remove.png";
 import Image from "next/image";
 import Head from "next/head";
@@ -112,7 +111,7 @@ const ContactForm = () => {
       className="w-full max-h-full"
        src={contactVideo} />; */}
 
-            <div className="grid w-full grid-cols-9 gap-16 p-8 ">
+            <div className="grid w-full grid-cols-9 gap-16 p-8">
               <motion.div
                 className="col-span-3 overflow-hidden mt-8"
                 initial={{ scale: 0.5, opacity: 0 }}
@@ -130,7 +129,7 @@ const ContactForm = () => {
                   src={developer3}
                   alt="developer"
                   priority
-                   sizes="(max-width: 768px) 100vw,
+                  sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
                   quality={100}
@@ -153,11 +152,11 @@ const ContactForm = () => {
                   touch – I can't wait to hear from you!
                 </p>
               </div>
-              <div className="col-span-2">
+              <div className="col-span-2 w-full">
                 {!open && (
                   <div
                     id="w3f__widget--content"
-                    className="fixed flex flex-col z-50 bottom-[100px] top-0 right-0 left-0 sm:top-auto sm:right-5 sm:left-auto h-[calc(100%-95px)] w-full sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md"
+                    className="fixed flex flex-col z-50 bottom-[100px] top-auto right-5 left-auto sm:top-auto sm:right-5 sm:left-auto h-[calc(80% -100px)] sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md"
                   >
                     <div className="flex p-5 flex-col justify-center items-center h-32 bg-darkPurple">
                       <h3 className="text-lg text-white">Let's Get In Touch</h3>

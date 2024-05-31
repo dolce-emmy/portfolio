@@ -18,6 +18,8 @@
       "@public/*": ["./public/*"],
       "@node_modules/*": ["./node_modules/*"],
       "@root/*": ["./"],
+      "@storybook/*": ["./.storybook/*"],
+      
       
     }
   }

@@ -6,7 +6,7 @@ import "./globals.css";
 import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
 import Script from "next/script";
-import { useRouter } from "next/navigation";
+import LoadingIcons from "react-loading-icons";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -22,31 +22,58 @@ export default function RootLayout({ children, className = "" }) {
 
   const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+      useEffect(() => {
+
+    const handleLoad = () => {
+      setLoading(false);
+      console.log("Page loaded, loading state set to false");
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    // Fallback in case load event doesn't fire in reasonable time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-    }, []);
+      console.log("Fallback timer triggered, loading state set to false");
+    }, 4000); // Adjust the fallback time as needed
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      clearTimeout(timer); // Cleanup timer on component unmount
+    };
+  }, []);
+
+
+  useEffect(() => {
+    console.log("Children received:", children);
+  }, [children]);
 
   return (
     <html lang="en">
       <body
         className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen dark:bg-dark ${className}`}
       >
+       
+        <NavBar />
+        
+         {loading && (
+          // <div className="flex justify-center items-center h-screen ">
+          //   {/* <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-snow"></div> */}
+          // </div>
+          <div className="flex justify-center items-center h-screen">
+            <LoadingIcons.Bars speed={0.75} />
+          </div>
+        )}
+
+
+        {!loading && children}
+
         <Script id="theme-switcher" strategy="beforeInteractive">
           if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
           window.matchMedia('(prefers-color-scheme: dark)').matches)){" "}
           {`document.documentElement.classList.add("dark")`} else{" "}
           {`document.documentElement.classList.remove("dark")`}
         </Script>
-        <NavBar />
-        {loading && (
-          <div className="flex justify-center items-center h-screen">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-snow"></div>
-          </div>
-        )}
-        {!loading && children}
       </body>
     </html>
   );

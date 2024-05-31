@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const variant = {
   initial: {
     opacity: 1,
@@ -57,6 +58,7 @@ const AnimatedText = ({ text, className = "" }) => {
           ))
         }
       </motion.h1>
+
     </div>
   );
 };

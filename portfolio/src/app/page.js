@@ -9,7 +9,7 @@ import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
 import Loading from "./template/loading";
 import Head from "next/head";
-
+import { HeroHighlightDemo } from "./components/ui/Hero-light-demo";
 
 export default function Home() {
   return (
@@ -43,12 +43,13 @@ export default function Home() {
             </div>
 
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center ">
-              <AnimatedText
+              {/* <AnimatedText
                 text={
                   "From Lines of Code to Digital Magic, I'm Eman, a Web Developer."
                 }
                 className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
-              />
+              /> */}
+              <HeroHighlightDemo className= "!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl" />
 
               <p className="my-4 text-lg text-base  text-darkPurple dark:text-snow sm:text-sm ">
                 Hello World! I'm a passionate web developer on a journey of

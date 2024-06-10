@@ -8,11 +8,14 @@ return (
   <motion.div
     className="flex items-center justify-center rounded-full font-semibold bg-darkPurple text-snow
         py-3 px-6 shadow-darkPurple cursor-pointer absolute  dark:bg-snow dark:text-darkPurple
+        lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent
+        xs:text-darkPurple xs:dark:text-snow xs:font-bold
         "
     whileHover={{ scale: 1.05 }}
     initial= {{x:0, y:0}}
     whileInView={{ x:x, y:y }}
     transition={{duration: 1.5}}
+    
   >
     {name}
   </motion.div>
@@ -25,11 +28,15 @@ return (
 const Skills = () => {
   return (
     <>
-      <h2 className="font-bold text-8xl mt-64 text-center">Skills</h2>
-      <div className="w-full h-screen relative flex items-center justify-center bg-circularLight dark:bg-circularDark z-0">
+      <h2 className="font-bold text-8xl mt-64 text-center md:text-6xl md:mt-32">Skills</h2>
+      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark z-0
+      lg:h-[80vh] sm:h-[60vh] xs:h-[50vh]
+      lg:bg-circularLightLg lg:dark:bg-circularDarkLg
+      ">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-darkPurple  text-snow 
-        p-8 shadow-darkPurple cursor-pointer dark:bg-snow dark:text-darkPurple
+        p-8 shadow-darkPurple cursor-pointer dark:bg-snow dark:text-darkPurple lg:p-6 md:p-4 xs:text-xs xs:p-2
+
         "
           whileHover={{ scale: 1.05 }}
         >

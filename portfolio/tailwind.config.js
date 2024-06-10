@@ -1,6 +1,7 @@
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require("tailwindcss");
 const svgToDataUri = require("mini-svg-data-uri");
-const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette").default;
+const flattenColorPalette =
+  require("tailwindcss/lib/util/flattenColorPalette").default;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -41,9 +42,24 @@ module.exports = {
       },
       backgroundImage: {
         circularLight:
-          "repeating-radial-gradient(rgb(0,0,0.4) 2px, #E1C8B2 5px, #E1C8B2 100px)",
+          "repeating-radial-gradient( rgb(0,0,0.4) 2px, #E1C8B2 5px, #E1C8B2 100px);",
         circularDark:
           "repeating-radial-gradient(rgb(255,255,255,0.4) 2px, #1b1b1b 8px, #1b1b1b 100px)",
+        circularLightLg:
+          "repeating-radial-gradient(rgb(0,0,0.4) 2px, #E1C8B2 5px, #E1C8B2 80px)",
+        circularDarkLg:
+          "repeating-radial-gradient(rgb(255,255,255,0.4) 2px, #1b1b1b 8px, #1b1b1b 80px)",
+          circularLightMd:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 60px)",
+
+    circularDarkMd:
+        "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 6px,#1b1b1b 60px)",
+
+    circularLightSm:
+        "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 40px)",
+
+    circularDarkSm:
+        "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,#1b1b1b 4px,#1b1b1b 40px)",
       },
     },
     screens: {

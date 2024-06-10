@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import Loading from "./template/loading";
 import Head from "next/head";
 import { HeroHighlightDemo } from "./components/ui/Hero-light-demo";
-
+import { GlowingStarsBackgroundCardPreview } from "./components/ui/GlowingStarsBackgroundCardPreview";
 export default function Home() {
   return (
     <>
@@ -22,13 +22,14 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loading loading={Loading} />
-      {/* <Head>
+
+      <Head>
         <title>Eman | Portfolio</title>
         <meta name="description" content="This is Home page" />
-      </Head> */}
+      </Head>
       <main className="">
-        <Template className="pt-0 md:pt-16 sm:pt-8 p-28">
+        <Template className="pt-0 md:pt-16 sm:pt-8 px-28">
+          {/* <GlowingStarsBackgroundCardPreview/> */}
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
               <Image
@@ -49,7 +50,8 @@ export default function Home() {
                 }
                 className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               /> */}
-              <HeroHighlightDemo className= "!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl" />
+              
+              <HeroHighlightDemo className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl" />
 
               <p className="my-4 text-lg text-base  text-darkPurple dark:text-snow sm:text-sm ">
                 Hello World! I'm a passionate web developer on a journey of

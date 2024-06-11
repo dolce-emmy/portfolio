@@ -45,9 +45,7 @@
   animation: star-animation 1s ease-in-out;
 }
 
-.animate-stars {
-  animation: stars 5s ease-out smooth infinite;   
-}
+
 
 .confetti {
   opacity: 1;

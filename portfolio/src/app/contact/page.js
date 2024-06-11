@@ -12,9 +12,11 @@ import AnimatedText from "../components/AnimatedText";
 import { motion } from "framer-motion";
 import developer from "/public/images/profile/developer-girl.png";
 import developer3 from "/public/images/profile/Default_A_brown_egyptian_developer_girl_wearing_glasses_sitti_0.jpg";
+import arrow from "/public/images/svgs/red_arrow.png"
 
 const ContactForm = () => {
   const [open, setOpen] = useState(true);
+  const [showClickMe, setShowClickMe] = useState(true);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,7 +40,7 @@ const ContactForm = () => {
 
     // Abusive content detection
       const message = formData.get("message");
-      const abusiveWords = ["abusive", "bad", "offensive", "fuck","cunt","stupid","twat", "dick", "bullocks", "pussy",]; // Add more abusive words here
+      const abusiveWords = ["abusive", "bad", "offensive", "fuck","cunt","stupid","twat", "dick", "bullocks", "pussy", "suck"]; // Add more abusive words here
       const isAbusive = abusiveWords.some((word) =>
       message.toLowerCase().includes(word.toLowerCase())
       );
@@ -96,6 +98,7 @@ const ContactForm = () => {
 
   const toggleWidget = () => {
     setOpen(!open);
+    setShowClickMe(!showClickMe);
   };
 
   return (
@@ -287,18 +290,43 @@ const ContactForm = () => {
                     ) : (
                       <>
                         <Image src={envelopeIcon2} alt="envelope" priority />
-                        <motion.p
+                        {/* <motion.p
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.5 }}
                           className="text-xs font-bold text-red animate-pulse text-red-800"
                         >
                           click here
-                        </motion.p>
+                        </motion.p> */}
                       </>
                     )}
                   </motion.div>
                 </motion.button>
+                {showClickMe && (
+                  <motion.div
+                    className="fixed z-50 bottom-28 right-28 text-4xl font-bold text-red-800
+                  "
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, ease: "easeInOut", duration: 1}}
+                  >
+                    <motion.p
+                      className=" animate-pulse text-red-500"
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 1, duration: 1, ease: "easeInOut", type: "spring", stiffness: 260, damping: 10}}
+
+                    >
+                      click here
+                    </motion.p>
+                    <Image
+                      src={arrow}
+                      alt="arrow"
+                      priority
+                      className=" fixed z-50 right-16 w-32"
+                    />
+                  </motion.div>
+                )}
               </div>
             </div>
           </Template>

@@ -12,16 +12,19 @@ import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 const AnimatedStars = ({ animateStars }) => {
   return (
     animateStars && (
-      <motion.div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+
+      // here we are using the absolute position to position the stars in the center of the screen
+
+      <motion.div className="absolute inset-0 flex justify-center items-center pointer-events-none">  
         {[...Array(20)].map((_, index) => (
           <Star
             key={index}
             // className={`w-10 h-10 rounded-full bg-yellow-400 animate-star delay-${
             //   index * 100
             // }`}
-            className={`animate-star delay-${index * 100}`}
+            className={`animate-star delay-${index * 100}`} // here we are using the animate-star class we created in the global.css file to animate the stars using the keyframes
             style={{
-              position: "absolute",
+              position: "absolute", // we are using the position absolute to position the stars randomly on the screen
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 90}%`,
             }}
@@ -76,7 +79,7 @@ const Resume2 = () => {
       <AnimatedLink
         href="/eman_hassan_cv.pdf"
         onClick={handleClick}
-        className={`px-6 py-2.5 md:px-4 md:py-2`}
+        className={`px-6 py-2.5 md:px-4 md:py-2 sm:text-sm`}
       >
         Resume
       </AnimatedLink>
@@ -84,7 +87,7 @@ const Resume2 = () => {
       <AnimatedLink
         href="/certificate.pdf"
         onClick={handleClick}
-        className={`ml-4 px-6 py-2.5 md:px-4 md:py-2`}
+        className={`ml-4 px-6 py-2.5 md:px-4 md:py-2 sm:ml-2 sm:text-sm`}
       >
         Certificate
       </AnimatedLink>
@@ -92,10 +95,16 @@ const Resume2 = () => {
       <AnimatedStars animateStars={animateStars} />
 
       {showThankYou && (
-        <motion.div className="fixed bottom-4 end-2 m-2 "
-        initial={{ scale:0, opacity: 0, }}
-        animate={{ scale:1,  opacity: 1, }}
-        transition={{ duration: 0.5, type: "spring", stiffness: 260, damping: 20,}}
+        <motion.div
+          className="fixed bottom-4 end-2 m-2 "
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
         >
           <div className="bg-darkPurple rounded-lg px-6 py-2.5 md:px-4 md:py-2 shadow-lg">
             <p className="text-lg font-semibold text-center text-snow p-1">

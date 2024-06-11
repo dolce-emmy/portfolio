@@ -89,7 +89,7 @@ const NavBar = () => {
       {/* here is the hamburger menu that will be displayed on mobile or tablet screens so it's hidden until the screen is at max-width: 1023px then it will be displayed */}
       <button
       // lg:flex is a media query that will display this button only on screens that are smaller than 1023px
-        className="flex flex-col justify-center items-center hidden lg:flex"
+        className="flex flex-col justify-center items-center hidden lg:flex mt-2"
         onClick={toggleMenu}
       >
         {/* <span className="sr-only">Toggle Menu</span> */}
@@ -288,7 +288,7 @@ const NavBar = () => {
         </motion.div>
       }
 
-      <div className="absolute left-[50%] top-2 translate-x-[50%] md:translate-x-0">
+      <div className="absolute left-[50%] top-2 translate-x-[50%] md:-translate-x-11">
         <Logo />
       </div>
     </header>

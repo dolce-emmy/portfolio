@@ -12,13 +12,12 @@ import Head from "next/head";
 import { HeroHighlightDemo } from "./components/ui/Hero-light-demo";
 import { GlowingStarsBackgroundCardPreview } from "./components/ui/GlowingStarsBackgroundCardPreview";
 export default function Home() {
+
+
   return (
     <>
-      {/* {loading && (
-        <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-gray-800 opacity-75">
-          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
-        </div>
-      )} */}
+
+      
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -28,7 +27,8 @@ export default function Home() {
         <meta name="description" content="This is Home page" />
       </Head>
       <main className="">
-        <Template className="pt-0 md:pt-16 sm:pt-8 px-28">
+        {/* <GlowingStarsBackgroundCardPreview /> */}
+        <Template className="pt-0 md:pt-16 sm:pt-8 px-28 sm:px-10">
           {/* <GlowingStarsBackgroundCardPreview/> */}
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">

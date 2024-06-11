@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const easing = "easeInOut"; // easing
 const repeat = Infinity; // repeat amount, "Infinity" or a number value
-const Star1Height = -203;
+const Star1Height = -203; // here we are setting different heights of the stars
 const Star2Height = -182;
 const Star3Height = -223;
 const Star4Height = -102;
@@ -17,12 +17,12 @@ export const Star1 = ({ className, ...rest }) => (
     height={58}
     className={className}
     {...rest}
-    as={motion.div}
+    as={motion.div} // here the star is wrapped in a motion.div so we can animate it using framer-motion
     animate={{
       rotate: [14, -6, 9],
       scale: [0, 1, 1, 0],
       y: [0, Star1Height],
-    }}
+    }} // here we are setting the animation properties
     transition={{
       duration: 2,
       repeat: repeat,

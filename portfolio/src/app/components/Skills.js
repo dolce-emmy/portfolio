@@ -35,7 +35,7 @@ return (
 const Skills = () => {
   return (
     <>
-      <h2 className="font-bold text-8xl mt-64 text-center md:text-6xl md:mt-32">
+      <h2 className="font-bold text-8xl mt-64 text-center md:text-6xl md:mt-32 xs:mt-16 xs:mb-4">
         Skills
       </h2>
       <div
@@ -64,12 +64,12 @@ const Skills = () => {
         <Skill name="NodeJS" lgX="31vw" lgY="-5vw" />
         <Skill name="ExpressJS" lgX="-32vw" lgY="-5vw" />
         <Skill name="MongoDB" lgX="-20vw" lgY="-15vw" />
-        <Skill name="Git" lgX="-31vw" lgY="18vw" />
+        <Skill name="RestAPI" lgX="-31vw" lgY="18vw" />
         <Skill name="Linux" lgX="31vw" lgY="13vw" />
-        <Skill name="SCSS" lgX="-5vw" lgY="16vw" />
+        <Skill name="Git" lgX="-5vw" lgY="16vw" />
         <Skill name="Github" lgX="-38vw" lgY="5vw" />
         <Skill name="Kanban" lgX="10vw" lgY="19vw" />
-        <Skill name="Figma" lgX="38vw" lgY="-5vw" />
+        <Skill name="SCSS" lgX="38vw" lgY="-5vw" />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Head from "next/head";
 import Template from "../components/Template";
 import AnimatedText from "../components/AnimatedText";
@@ -13,15 +13,18 @@ import { motion, useMotionValue } from "framer-motion";
 
 const FramerImage = motion(Image);
 
-const MovingImage = ({ title, img, link }) => {
+const MovingImage = ({ title, img, link, isMediumScreen }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const imgRef = useRef(null);
 
   const handleMouseMove = (e) => {
+    // here we are saying if isMediumScreen is false, then show the image on hover else don't show it
+    if(isMediumScreen ===false){
     imgRef.current.style.display = "inline-block";
     x.set(e.pageX);
     y.set(-10);
+    }
   };
 
   const handleMouseLeave = (e) => {
@@ -29,6 +32,8 @@ const MovingImage = ({ title, img, link }) => {
     x.set(0);
     y.set(0);
   };
+
+  console.log("isMediumScreenMoving:", isMediumScreen); 
 
   return (
     <Link
@@ -47,24 +52,33 @@ const MovingImage = ({ title, img, link }) => {
         ref={imgRef}
         src={img}
         alt={title}
-        className="z-10 w-10 h-10 hidden absolute rounded-lg"
+        priority
+        //here we are saying if the screen is medium, then don't show the image and hide it
+        className={`z-10 w-20 h-20 hidden absolute rounded-lg object-cover ${
+          isMediumScreen ? "hidden" : ""
+        }`}
       />
     </Link>
   );
 };
 
-const Article = ({ img, title, time, link }) => {
+const Article = ({ img, title, time, link, isMediumScreen }) => {
+
+
   return (
     <motion.li
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }}
-      
       className="  relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-snow  text-darkPurple first:mt-0 border border-solid border-snow
-    shadow-2xl shadow-champagne 
+    shadow-2xl shadow-champagne sm:flex-col
     "
     >
-      <MovingImage title={title} img={img} link={link} />
-      <span className="text-darkPurple font-semibold pl-4">{time}</span>
+      <MovingImage title={title} img={img} link={link}
+       isMediumScreen={isMediumScreen} 
+       />
+      <span className="text-darkPurple font-semibold pl-4 sm:self-start sm:pl-0 xs:text-xs">
+        {time}
+      </span>
     </motion.li>
   );
 };
@@ -96,7 +110,7 @@ const FeaturedArticle = ({ link, img, title, time, summary }) => {
       </Link>
 
       <Link href={link} target="blank">
-        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline">
+        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg ">
           {title}
         </h2>
       </Link>
@@ -106,6 +120,46 @@ const FeaturedArticle = ({ link, img, title, time, summary }) => {
   );
 };
 const articles = () => {
+
+ const [isMediumScreen, setIsMediumScreen] = useState(false);
+useEffect(() => {
+
+  const mediaQuery = window.matchMedia("(max-width: 767px)");
+  console.log(mediaQuery.matches);
+  setIsMediumScreen(mediaQuery.matches);
+
+  const handler = () => setIsMediumScreen(mediaQuery.matches);
+  mediaQuery.addEventListener("change", handler);
+
+  return () => mediaQuery.removeEventListener("change", handler);
+}, []);
+
+useEffect(
+  () => {
+
+    const updateScreenSize = () => {
+      
+      const mediaQuery = window.matchMedia("(max-width: 767px)");
+      setIsMediumScreen(mediaQuery.matches);
+    };
+
+    updateScreenSize(); // Initial check
+console.log("isMediumScreen updated",isMediumScreen);
+    const handler = () => {
+      updateScreenSize();
+    };
+
+    window.addEventListener("resize", handler);
+
+    return () => {
+      window.removeEventListener("resize", handler);
+    };
+  },
+  [
+    isMediumScreen
+  ]
+);
+
   return (
     <>
       <Head>
@@ -113,12 +167,12 @@ const articles = () => {
         <meta name="description" content="This is articles page" />
       </Head>
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
-        <Template className="pt-16 p-28">
+        <Template className="pt-16 p-28 sm:p-5">
           <AnimatedText
             text="Feed your intellect, feed your soul!"
-            className="mb-16"
+            className="mb-16 lg:!text-5xl md:text!4xl sm:mb-8 sm:!text-3xl"
           />
-          <ul className="grid grid-cols-2 gap-16">
+          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
             <FeaturedArticle
               img={article1}
               title="Resolving Framer Motion Compatibility in Next.js 14: The ‘use client’ Workaround"
@@ -144,24 +198,28 @@ const articles = () => {
               img={article3}
               time="3 min read"
               link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"
+              isMediumScreen={isMediumScreen}
             />
             <Article
               title="Next.js vs React.js: Understanding the Differences"
               img=""
               time="3 min read"
               link="https://medium.com/@dolce-emmy/next-js-vs-react-js-understanding-the-differences-d5bb52afe1c5"
+              isMediumScreen={isMediumScreen}
             />
 
             <Article
               title="Optimizing Image Loading in Next.js: Understanding Prioritization"
               link="https://medium.com/@dolce-emmy/title-optimizing-image-loading-in-next-js-understanding-prioritization-e102a8bbb3f1"
               time="2 min read"
+              isMediumScreen={isMediumScreen}
             />
             <Article
               title="Supercharge Your Next.js Website with Optimized Image Loading"
               img=""
               time="2 min read"
               link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"
+              isMediumScreen={isMediumScreen}
             />
 
             <Article
@@ -169,6 +227,7 @@ const articles = () => {
               img=""
               time="3 min read"
               link="https://medium.com/@dolce-emmy/embracing-the-future-why-next-js-is-leading-the-way-e7196ad39808"
+              isMediumScreen={isMediumScreen}
             />
           </ul>
         </Template>

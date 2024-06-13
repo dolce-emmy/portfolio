@@ -34,6 +34,7 @@ module.exports = {
         darkPurple: "#27182D",
         cordovan: "#80363F",
         flower: "#FFD700",
+        vermilion: "#E24B37",
 
         // lightYellow: "#FCE0A2",
       },
@@ -45,7 +46,6 @@ module.exports = {
           "repeating-radial-gradient( rgb(0,0,0.4) 2px, #E1C8B2 5px, #E1C8B2 100px);",
         circularDark:
           "repeating-radial-gradient(rgb(255,255,255,0.4) 2px, #1b1b1b 8px, #1b1b1b 100px)",
-      
       },
     },
     screens: {

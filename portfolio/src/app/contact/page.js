@@ -109,14 +109,14 @@ const ContactForm = () => {
       </Head>
       <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
-          <Template className="p-16">
+          <Template className="p-16 sm:p-0 sm:mt-4 ">
             {/* <NextVideo
       className="w-full max-h-full"
        src={contactVideo} />; */}
 
-            <div className="grid w-full grid-cols-9 gap-16 p-8">
+            <div className=" grid w-full grid-cols-9 gap-16 p-8 gap-y-32 xl:gap-x-16 lg:gap-y-10 lg:gap-x-8 md:gap-y-14 sm:gap-x-0">
               <motion.div
-                className="col-span-3 overflow-hidden mt-8"
+                className="flex flex-col justify-center items-center col-span-3 overflow-hidden lg:col-span-9"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -136,15 +136,15 @@ const ContactForm = () => {
               (max-width: 1200px) 50vw,
               33vw"
                   quality={100}
-                  className="w-full  object-cover rounded-full"
+                  className="w-full  object-cover rounded-full lg:w-1/2"
                 />
               </motion.div>
-              <div className="col-span-4 w-full">
+              <div className="col-span-4 w-full lg:col-span-9">
                 <AnimatedText
                   text={"Where Communication Builds Bridges, Let's Connect!"}
-                  className="text-left pt-40"
+                  className="text-left pt-40 lg:!text-4xl md:text!3xl sm:!text-2xl lg:pt-0 sm:text-center"
                 />
-                <p className=" my-4 text-base text-lg  text-darkPurple dark:text-snow">
+                <p className=" my-4 text-base text-lg  text-darkPurple dark:text-snow ">
                   Ready to take your project to the next level? Let's
                   collaborate and turn your vision into a stunning reality.
                   Whether you're looking to create a sleek and professional
@@ -159,7 +159,7 @@ const ContactForm = () => {
                 {!open && (
                   <div
                     id="w3f__widget--content"
-                    className="fixed flex flex-col z-50 bottom-[100px] top-auto right-5 left-auto sm:top-auto sm:right-5 sm:left-auto h-[calc(80% -100px)] sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md"
+                    className="fixed flex flex-col z-50 bottom-[100px] top-auto right-5 left-auto sm:top-auto sm:right-5 sm:left-auto h-[calc(80% -100px)] sm:w-[300px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md"
                   >
                     <div className="flex p-5 flex-col justify-center items-center h-32 bg-darkPurple">
                       <h3 className="text-lg text-white">Let's Get In Touch</h3>
@@ -275,7 +275,7 @@ const ContactForm = () => {
                 <motion.button
                   id="w3f__widget--btn"
                   onClick={toggleWidget}
-                  className="fixed z-40 right-5 bottom-8  flex justify-center items-center w-14 h-14 rounded-full"
+                  className="fixed z-40 right-5 bottom-8  flex justify-center items-center w-14 h-14 rounded-full lg:absolute lg:right-8 lg:top-5 text-white shadow-2xl"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   // transition={{ duration: 0.2, ease: "easeInOut" }}
@@ -304,18 +304,25 @@ const ContactForm = () => {
                 </motion.button>
                 {showClickMe && (
                   <motion.div
-                    className="fixed z-50 bottom-28 right-28 text-4xl font-bold text-red-800
+                    className="fixed z-50 bottom-28 right-28 text-4xl font-bold
+                    lg:w-20 lg:h-10 lg:bottom-auto lg:top-20 lg:right-4 lg:text-sm lg:absolute sm:text-xs sm:top-17
                   "
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1, ease: "easeInOut", duration: 1}}
+                    transition={{ delay: 1, ease: "easeInOut", duration: 1 }}
                   >
                     <motion.p
-                      className=" animate-pulse text-red-500"
+                      className=" animate-pulse text-vermilion lg:absolute lg:top-14 sm:top-11 sm:right-2"
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 1, duration: 1, ease: "easeInOut", type: "spring", stiffness: 260, damping: 10}}
-
+                      transition={{
+                        delay: 1,
+                        duration: 1,
+                        ease: "easeInOut",
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 10,
+                      }}
                     >
                       click here
                     </motion.p>
@@ -323,7 +330,7 @@ const ContactForm = () => {
                       src={arrow}
                       alt="arrow"
                       priority
-                      className=" fixed z-50 right-16 w-32"
+                      className=" fixed z-50 right-16 w-32 lg:absolute lg:right-0 lg:top-1  lg:-rotate-90 sm:w-16  "
                     />
                   </motion.div>
                 )}

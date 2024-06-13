@@ -88,7 +88,7 @@ const NavBar = () => {
     >
       {/* here is the hamburger menu that will be displayed on mobile or tablet screens so it's hidden until the screen is at max-width: 1023px then it will be displayed */}
       <button
-      // lg:flex is a media query that will display this button only on screens that are smaller than 1023px
+        // lg:flex is a media query that will display this button only on screens that are smaller than 1023px
         className="flex flex-col justify-center items-center hidden lg:flex mt-2"
         onClick={toggleMenu}
       >
@@ -180,18 +180,15 @@ const NavBar = () => {
         </nav>
       </div>
 
-
-{/* here we are making a condition to trigger the toggle for the hamburger menu for the mobile so if the menu is open to render all the elements */}
-      {
-        isMenuOpen && 
+      {/* here we are making a condition to trigger the toggle for the hamburger menu for the mobile so if the menu is open to render all the elements */}
+      {isMenuOpen && (
         <motion.div
-        initial={{scale:0, opacity: 0, x: "-50%", y: "-50%"}}
-        animate={{ scale:1, opacity: 1 }}
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
           className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
       bg-darkPurple/90 dark:bg-snow/75 text-snow  rounded-lg backdrop-blur-md shadow-lg py-32 
       "
         >
-
           <nav className="flex flex-col justify-center">
             <CustomMobileLink
               href="/"
@@ -284,11 +281,10 @@ const NavBar = () => {
               )}
             </motion.button>
           </nav>
-
         </motion.div>
-      }
+      )}
 
-      <div className="absolute left-[50%] top-2 translate-x-[50%] md:-translate-x-11">
+      <div className="absolute left-[50%] top-2 translate-x-[50%] lg:-translate-x-7 ">
         <Logo />
       </div>
     </header>

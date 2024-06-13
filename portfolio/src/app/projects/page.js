@@ -168,9 +168,8 @@ const projects = () => {
                 <FeaturedProject
                   title="FriendFusion Social Media"
                   img={project1}
-                  summary="A social media platform for friends to connect and share their experiences hshdszgerfvwer uhguzwefbuzewzruwe3
-                kuifewuiruiewufiew oiefniuweuiferuif okenuifniuwe."
-                  link="https://friend-fusion-social-media-website.onrender.com/"
+                  summary="FriendFusion is a full-stack social media platform built with the MERN stack (MongoDB, Express.js, React.js, and Node.js). It enables users to manage profiles, add and delete friends, share posts, comment on and like posts, and stay updated with a dynamic daily YouTube video feature."
+                  link="https://friend-fusion-social-media.onrender.com/#/login"
                   github="https://github.com/dolce-emmy/FriendFusion"
                   type="Featured Project"
                 />

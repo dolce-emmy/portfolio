@@ -39,15 +39,15 @@ export function HeroHighlightDemo({className = ""}) {
         variants={variant}
         initial="initial"
         animate="animate"
-        className= "inline-block w-full text-darkPurple dark:text-snow font-bold capitalize text-5xl "
+        className="inline-block w-full text-darkPurple dark:text-snow font-bold capitalize text-5xl xl:!text-6xl lg:!text-center lg:!text-5xl md:!text-4xl sm:!text-3xl "
       >
         <motion.span className="inline-block" variants={singleVariant}>
           From Lines of Code to Digital Magic.{" "}
         </motion.span>
 
-        <Highlight 
-        className="text-black dark:text-white my-4 -z-10"
-        variants={singleVariant}
+        <Highlight
+          className="text-black dark:text-white my-4 -z-10"
+          variants={singleVariant}
         >
           I'm Eman, a Web Developer
         </Highlight>

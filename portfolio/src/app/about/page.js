@@ -82,14 +82,14 @@ const about = () => {
                   fueled my passion and equipped me with the skills to bring my
                   ideas to life through code.
                 </p>
-                <p className="font-medium">
+                <p className="font-medium sm:hidden">
                   Throughout my learning journey, I've undertaken a variety of
                   projects to apply and reinforce my skills. From responsive
                   websites to interactive web applications, each project
                   represents a step forward in my development journey and
                   demonstrates my ability to bring ideas to life.
                 </p>
-                <p className=" py-3 font-medium">
+                <p className=" py-3 font-medium sm:hidden">
                   What drew me to web development was the opportunity to blend
                   creativity with technical skills, to craft digital experiences
                   that resonate with users and leave a lasting impression. The
@@ -97,10 +97,10 @@ const about = () => {
                   are constant companions, excites me and motivates me to push
                   the boundaries of what's possible.
                 </p>
-                <h2 className="py-3 text-lg font-bold uppercase text-darkPurple/75">
+                <h2 className="py-3 text-lg font-bold uppercase text-darkPurple/75 sm:hidden">
                   Let's Connect:
                 </h2>
-                <p className="font-medium">
+                <p className="font-medium sm:hidden">
                   I'm excited about the prospect of leveraging my skills and
                   enthusiasm to contribute to a dynamic team and make a
                   meaningful impact in the field of web development. If you're

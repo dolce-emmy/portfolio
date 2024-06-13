@@ -16,8 +16,6 @@ export default function Home() {
 
   return (
     <>
-
-      
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -28,7 +26,7 @@ export default function Home() {
       </Head>
       <main className="">
         {/* <GlowingStarsBackgroundCardPreview /> */}
-        <Template className="pt-0 md:pt-16 sm:pt-8 px-28 sm:px-10">
+        <Template className="pt-0 px-28 xl:pt-6 lg:pt-16 md:py-5 sm:pt-8  sm:px-10">
           {/* <GlowingStarsBackgroundCardPreview/> */}
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
@@ -50,8 +48,8 @@ export default function Home() {
                 }
                 className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               /> */}
-              
-              <HeroHighlightDemo className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl" />
+
+              <HeroHighlightDemo className="!text-left xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-lg" />
 
               <p className="my-4 text-lg text-base  text-darkPurple dark:text-snow sm:text-sm ">
                 Hello World! I'm a passionate web developer on a journey of

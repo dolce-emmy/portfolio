@@ -12,7 +12,7 @@ import project1 from "/public/images/projects/friendfusion.png";
 import project2 from "/public/images/projects/Luxevivre.png";
 import project3 from "/public/images/projects/pilot_coder.png";
 import TransitionEffect from "../components/TransitionEffect";
-
+import NavBar from "../components/NavBar";
 const FramerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {3

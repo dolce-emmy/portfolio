@@ -56,7 +56,6 @@ export default function RootLayout({ children, className = "" }) {
       <body
         className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen dark:bg-dark ${className}`}
       >
-        <NavBar />
         {loading && (
           // <div className="flex justify-center items-center h-screen ">
           //   {/* <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-snow"></div> */}
@@ -66,9 +65,13 @@ export default function RootLayout({ children, className = "" }) {
           </div>
         )}
 
-        {!loading && children}
-
-      
+        {!loading && (
+          <>
+            
+            
+            {children}
+          </>
+        )}
 
         <Script id="theme-switcher" strategy="beforeInteractive">
           if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&

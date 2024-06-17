@@ -7,7 +7,7 @@ import Resume from "./components/Resume";
 import Resume2 from "./components/Resume2";
 import HireMe from "./components/HireMe";
 import Footer from "./components/Footer";
-import Loading from "./template/loading";
+import NavBar from "./components/NavBar";
 import Head from "next/head";
 import { HeroHighlightDemo } from "./components/ui/Hero-light-demo";
 import { GlowingStarsBackgroundCardPreview } from "./components/ui/GlowingStarsBackgroundCardPreview";
@@ -27,7 +27,7 @@ export default function Home() {
       </Head>
 
       {/* <TransitionEffect/> */}
-
+      <NavBar />
       <main className="">
         {/* <GlowingStarsBackgroundCardPreview /> */}
         <Template className="pt-0 px-28 xl:pt-6 lg:pt-16 md:py-5 sm:pt-8  sm:px-10">

@@ -11,7 +11,7 @@ import article2 from "/public/images/article2.jpg";
 import article3 from "/public/images/article3.jpg";
 import { motion, useMotionValue } from "framer-motion";
 import TransitionEffect from "../components/TransitionEffect";
-
+import NavBar from "../components/NavBar";
 const FramerImage = motion(Image);
 
 const MovingImage = ({ title, img, link, isMediumScreen }) => {

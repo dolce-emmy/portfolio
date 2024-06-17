@@ -10,6 +10,7 @@ import article1 from "/public/images/article1.jpg";
 import article2 from "/public/images/article2.jpg";
 import article3 from "/public/images/article3.jpg";
 import { motion, useMotionValue } from "framer-motion";
+import TransitionEffect from "../components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
@@ -166,6 +167,7 @@ console.log("isMediumScreen updated",isMediumScreen);
         <title>Eman | Articles Page</title>
         <meta name="description" content="This is articles page" />
       </Head>
+      {/* <TransitionEffect /> */}
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
         <Template className="pt-16 p-28 sm:p-5">
           <AnimatedText

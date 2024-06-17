@@ -33,8 +33,10 @@ module.exports = {
         snow: "#FFF7F5",
         darkPurple: "#27182D",
         cordovan: "#80363F",
+        peach: "#F0B691",
         flower: "#FFD700",
         vermilion: "#E24B37",
+        sandyBrown: "#FDAF67",
 
         // lightYellow: "#FCE0A2",
       },

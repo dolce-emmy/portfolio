@@ -21,6 +21,8 @@
       "@storybook/*": ["./.storybook/*"],
       
       
+      
+      
     }
   }
 }

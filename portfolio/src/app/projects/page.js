@@ -5,14 +5,13 @@ import Head from "next/head";
 import Template from "../components/Template";
 import AnimatedText from "../components/AnimatedText";
 import { easeInOut, motion } from "framer-motion";
-import Loading from "../template/loading";
 import Link from "next/link";
 import Image from "next/image";
 import { Github3Icon } from "../components/Icons";
 import project1 from "/public/images/projects/friendfusion.png";
 import project2 from "/public/images/projects/Luxevivre.png";
 import project3 from "/public/images/projects/pilot_coder.png";
-
+import TransitionEffect from "../components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
@@ -148,8 +147,8 @@ const projects = () => {
         <title>Eman | projects Page</title>
         <meta name="description" content="This is projects page" />
       </Head>
-      <Loading />
-
+      
+      {/* <TransitionEffect /> */}
       <main className="montserrat">
         <motion.div
           className="flex flex-col items-center justify-center"

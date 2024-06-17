@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import developer from "/public/images/profile/developer-girl.png";
 import developer3 from "/public/images/profile/Default_A_brown_egyptian_developer_girl_wearing_glasses_sitti_0.jpg";
 import arrow from "/public/images/svgs/red_arrow.png"
-
+import TransitionEffect from "../components/TransitionEffect";
 const ContactForm = () => {
   const [open, setOpen] = useState(true);
   const [showClickMe, setShowClickMe] = useState(true);
@@ -107,6 +107,7 @@ const ContactForm = () => {
         <title>Eman | projects Page</title>
         <meta name="description" content="This is contact page" />
       </Head>
+      {/* <TransitionEffect /> */}
       <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
           <Template className="p-16 sm:p-0 sm:mt-4 ">
@@ -275,7 +276,7 @@ const ContactForm = () => {
                 <motion.button
                   id="w3f__widget--btn"
                   onClick={toggleWidget}
-                  className="fixed z-40 right-5 bottom-8  flex justify-center items-center w-14 h-14 rounded-full lg:absolute lg:right-8 lg:top-5 text-white shadow-2xl"
+                  className="fixed z-0 right-5 bottom-8  flex justify-center items-center w-14 h-14 rounded-full lg:absolute lg:right-8 lg:top-5 text-white shadow-2xl"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   // transition={{ duration: 0.2, ease: "easeInOut" }}

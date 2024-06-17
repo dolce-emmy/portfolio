@@ -10,7 +10,8 @@ import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
 import Skills from "../components/Skills";
-import Loading from "../template/loading";
+import { HeroHighlightDemo } from "../components/ui/Hero-light-demos2";
+import TransitionEffect from "../components/TransitionEffect";
 
 const about = () => {
   const Image2 = motion(Image);
@@ -50,7 +51,7 @@ const about = () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-      <Loading />
+      {/* <TransitionEffect /> */}
 
       <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center xs:p-0">
@@ -61,9 +62,10 @@ const about = () => {
             />
             <div className="grid w-full grid-cols-8 grid-rows[200px, 200px, 200px, 200px, 200px, 200px, 200px, 200px] gap-8 md:gap-4  sm:gap-4">
               <div className="col-span-4 row-span-4 flex flex-col items-start justify-start xl:col-span-8 xl:col-start-3 xl:col-end-8 md:col-start-2 md:col-span-8 xl:justify-center xl:row-start-4 xl:row-end-8 xl:pt-5">
-                <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75 dark:text-snow/75">
+                {/* <h2 className="pb-10 text-lg font-bold uppercase text-darkPurple/75 dark:text-snow/75">
                   Welcome to Eman's Biography
-                </h2>
+                </h2> */}
+                <HeroHighlightDemo />
                 <p className="font-medium">
                   Greetings! I'm Eman, a passionate web developer captivated by
                   the limitless possibilities of the digital Landscape. On the

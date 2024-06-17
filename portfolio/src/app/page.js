@@ -11,6 +11,7 @@ import Loading from "./template/loading";
 import Head from "next/head";
 import { HeroHighlightDemo } from "./components/ui/Hero-light-demo";
 import { GlowingStarsBackgroundCardPreview } from "./components/ui/GlowingStarsBackgroundCardPreview";
+import TransitionEffect from "./components/TransitionEffect";
 export default function Home() {
 
 
@@ -24,6 +25,9 @@ export default function Home() {
         <title>Eman | Portfolio</title>
         <meta name="description" content="This is Home page" />
       </Head>
+
+      {/* <TransitionEffect/> */}
+
       <main className="">
         {/* <GlowingStarsBackgroundCardPreview /> */}
         <Template className="pt-0 px-28 xl:pt-6 lg:pt-16 md:py-5 sm:pt-8  sm:px-10">

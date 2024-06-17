@@ -7,7 +7,9 @@ import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
 import Script from "next/script";
 import LoadingIcons from "react-loading-icons";
-
+import { motion,AnimatePresence} from "framer-motion";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import TransitionEffect from "./components/TransitionEffect";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont",
@@ -21,7 +23,9 @@ const metadata = {
 export default function RootLayout({ children, className = "" }) {
 
   const [loading, setLoading] = useState(true);
-
+    const path = usePathname();
+    const router = useRouter();
+    const searchParams = useSearchParams();
       useEffect(() => {
 
     const handleLoad = () => {
@@ -43,20 +47,21 @@ export default function RootLayout({ children, className = "" }) {
     };
   }, []);
 
-
+// here we are useEffect to check if the children are received or not
   useEffect(() => {
     console.log("Children received:", children);
   }, [children]);
+
+  console.log(path);
+  console.log(searchParams);
 
   return (
     <html lang="en">
       <body
         className={`${montserrat.variable} bg-desert  text-darkPurple w-full min-h-screen dark:bg-dark ${className}`}
       >
-       
         <NavBar />
-        
-         {loading && (
+        {loading && (
           // <div className="flex justify-center items-center h-screen ">
           //   {/* <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-snow"></div> */}
           // </div>
@@ -65,8 +70,14 @@ export default function RootLayout({ children, className = "" }) {
           </div>
         )}
 
-
-        {!loading && children}
+        {!loading && (
+          <AnimatePresence mode="wait">
+            <motion.span key={path}>
+              <TransitionEffect />
+              {children}
+            </motion.span>
+          </AnimatePresence>
+        )}
 
         <Script id="theme-switcher" strategy="beforeInteractive">
           if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&

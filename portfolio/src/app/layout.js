@@ -70,14 +70,16 @@ export default function RootLayout({ children, className = "" }) {
           </div>
         )}
 
-        {!loading && (
+        {!loading && children}
+
+        {/* {!loading && (
           <AnimatePresence mode="wait">
             <motion.span key={path}>
               <TransitionEffect />
               {children}
             </motion.span>
           </AnimatePresence>
-        )}
+        )} */}
 
         <Script id="theme-switcher" strategy="beforeInteractive">
           if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&

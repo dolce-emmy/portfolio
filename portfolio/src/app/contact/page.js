@@ -107,7 +107,7 @@ const ContactForm = () => {
         <title>Eman | projects Page</title>
         <meta name="description" content="This is contact page" />
       </Head>
-      {/* <TransitionEffect /> */}
+      <TransitionEffect />
       <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
           <Template className="p-16 sm:p-0 sm:mt-4 ">

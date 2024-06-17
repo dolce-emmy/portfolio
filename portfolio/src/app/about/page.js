@@ -51,7 +51,7 @@ const about = () => {
         <title>Eman | About Page</title>
         <meta name="description" content="This is about page" />
       </Head>
-      {/* <TransitionEffect /> */}
+      <TransitionEffect />
 
       <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center xs:p-0">

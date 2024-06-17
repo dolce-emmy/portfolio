@@ -5,12 +5,11 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import SunIcon from "/public/images/svgs/sun.png";
 import MoonIcon from "/public/images/svgs/moon.png";
 import Image from "next/image";
-
 
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
@@ -51,12 +50,9 @@ const handleClick = () => {
   router.push(href);
 }
   return (
+
     // here we are using a button instead of a link because we want to trigger the toggle function when we click on the button
-    <button
-      href={href}
-      className={`${className} relative group text-snow dark:text-dark my-2 `}
-      onClick={handleClick}
-    >
+    <button href={href} className={`${className} relative group text-snow dark:text-dark my-2 `} onClick={handleClick}>
       {title}
 
       <span
@@ -65,9 +61,7 @@ const handleClick = () => {
       group-hover:w-full transition-[width] ease duration-300
       ${path === href ? "w-full" : "w-0"}
        dark:bg-dark
-       
       `}
-        
       >
         &nbsp;
       </span>
@@ -118,17 +112,16 @@ const NavBar = () => {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav>
-          
-            <CustomLink href="/" title="Home" className="mr-4" />
+          <CustomLink href="/" title="Home" className="mr-4" />
 
-            <CustomLink href="/about" title="About" className="mx-4" />
+          <CustomLink href="/about" title="About" className="mx-4" />
 
-            <CustomLink href="/projects" title="Projects" className="mx-4" />
+          <CustomLink href="/projects" title="Projects" className="mx-4" />
 
-            <CustomLink href="/articles" title="Articles" className="mx-4" />
+          <CustomLink href="/articles" title="Articles" className="mx-4" />
 
-            <CustomLink href="/contact" title="Contact" className="ml-4" />
-         
+          <CustomLink href="/contact" title="Contact" className="ml-4" />
+
           {/* <CustomLink href="/contact" title="Contact" className="m-4" /> */}
         </nav>
 

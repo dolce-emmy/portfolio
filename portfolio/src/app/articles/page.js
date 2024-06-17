@@ -167,7 +167,7 @@ console.log("isMediumScreen updated",isMediumScreen);
         <title>Eman | Articles Page</title>
         <meta name="description" content="This is articles page" />
       </Head>
-      {/* <TransitionEffect /> */}
+      <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
         <Template className="pt-16 p-28 sm:p-5">
           <AnimatedText

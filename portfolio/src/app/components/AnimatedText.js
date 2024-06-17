@@ -10,7 +10,7 @@ const variant = {
   animate: {
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 1,
       // the staggerChildren property is used to stagger the animation of each word in the sentence so that they don't all animate at the same time
       staggerChildren: 0.1,
     },
@@ -26,7 +26,7 @@ const singleVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 2,
     },
   },
 };

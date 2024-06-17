@@ -5,11 +5,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter, usePathname } from "next/navigation";
 import { LinkedInIcon, Github3Icon, Medium } from "./Icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import useThemeSwitcher from "../components/hooks/useThemeSwitcher";
 import SunIcon from "/public/images/svgs/sun.png";
 import MoonIcon from "/public/images/svgs/moon.png";
 import Image from "next/image";
+import TransitionEffect from "./TransitionEffect";
 
 // we will create another component called customLink so we don't have to repeat the same code for each link
 const CustomLink = ({ href, title, className }) => {
@@ -27,10 +28,16 @@ const CustomLink = ({ href, title, className }) => {
       absolute left-0 -bottom-0.5 
       group-hover:w-full transition-[width] ease duration-300
       ${path === href ? "w-full" : "w-0"}
-       dark:bg-snow
+      
+      dark:bg-snow
       `}
       >
         &nbsp;
+        <AnimatePresence mode="wait">
+          <motion.span key={path}>
+            <TransitionEffect />
+          </motion.span>
+        </AnimatePresence>
       </span>
     </Link>
   );

@@ -10,7 +10,6 @@ const TransitionEffect = () => {
         initial={{ x: "100%", width: "100%" }}
         animate={{ x: "0%", width: "0%" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        
         exit={{ x: ["0%", "100%"], width: ["0%", "100%"] }}
       />
       <motion.div

@@ -148,7 +148,7 @@ const projects = () => {
         <meta name="description" content="This is projects page" />
       </Head>
       
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <main className="montserrat">
         <motion.div
           className="flex flex-col items-center justify-center"

@@ -26,7 +26,7 @@ export default function Home() {
         <meta name="description" content="This is Home page" />
       </Head>
 
-      <TransitionEffect/>
+      {/* <TransitionEffect/> */}
 
       <main className="">
         {/* <GlowingStarsBackgroundCardPreview /> */}

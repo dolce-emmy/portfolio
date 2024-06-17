@@ -7,7 +7,9 @@ import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
 import Script from "next/script";
 import LoadingIcons from "react-loading-icons";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import TransitionEffect from "./components/TransitionEffect";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont",
@@ -19,11 +21,10 @@ const metadata = {
 };
 
 export default function RootLayout({ children, className = "" }) {
-
   const [loading, setLoading] = useState(true);
+  const path = usePathname();
 
-      useEffect(() => {
-
+  useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
       console.log("Page loaded, loading state set to false");
@@ -43,12 +44,12 @@ export default function RootLayout({ children, className = "" }) {
     };
   }, []);
 
-// here we are useEffect to check if the children are received or not
+  // here we are useEffect to check if the children are received or not
   useEffect(() => {
     console.log("Children received:", children);
   }, [children]);
 
- 
+  console.log(path);
 
   return (
     <html lang="en">
@@ -67,14 +68,7 @@ export default function RootLayout({ children, className = "" }) {
 
         {!loading && children}
 
-        {/* {!loading && (
-          <AnimatePresence mode="wait">
-            <motion.span key={path}>
-              <TransitionEffect />
-              {children}
-            </motion.span>
-          </AnimatePresence>
-        )} */}
+      
 
         <Script id="theme-switcher" strategy="beforeInteractive">
           if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&

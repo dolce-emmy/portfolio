@@ -7,7 +7,6 @@ import Image from "next/image";
 import Head from "next/head";
 import Template from "../components/Template";
 import AnimatedText from "../components/AnimatedText";
-import NavBar from "../components/NavBar";
 // import NextVideo from "next-video";
 // import contactVideo from "/videos/contact.mp4"
 import { motion } from "framer-motion";
@@ -109,7 +108,7 @@ const ContactForm = () => {
         <meta name="description" content="This is contact page" />
       </Head>
       {/* <TransitionEffect /> */}
-      <NavBar />
+      
       <main className="min-h-screen ">
         <div className="w-full flex flex-col items-center justify-center ">
           <Template className="p-16 sm:p-0 sm:mt-4 ">

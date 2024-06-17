@@ -67,8 +67,8 @@ export default function RootLayout({ children, className = "" }) {
 
         {!loading && (
           <>
-            
-            
+            <NavBar />
+
             {children}
           </>
         )}

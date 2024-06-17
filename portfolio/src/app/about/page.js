@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import AnimatedText from "../components/AnimatedText";
 import Template from "../components/Template";
-import NavBar from "../components/NavBar";
+
 import Image from "next/image";
 import profilePic from "/public/images/profile/eman.png";
 import lightBulb from "/public/images/profile/miscellaneous_icons_1.svg";
@@ -52,7 +52,7 @@ const about = () => {
         <meta name="description" content="This is about page" />
       </Head>
       {/* <TransitionEffect /> */}
-      <NavBar />
+     
       <main className="montserrat bg-desert text-darkPurple dark:text-snow w-full min-h-screen">
         <div className="flex w-full flex-col items-center justify-center xs:p-0">
           <Template className="pt-20 p-28 sm:p-16 xs:p-10">

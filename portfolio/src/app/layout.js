@@ -7,9 +7,7 @@ import useThemeSwitcher from "./components/hooks/useThemeSwitcher";
 import NavBar from "./components/NavBar";
 import Script from "next/script";
 import LoadingIcons from "react-loading-icons";
-import { motion,AnimatePresence} from "framer-motion";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import TransitionEffect from "./components/TransitionEffect";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont",
@@ -23,9 +21,7 @@ const metadata = {
 export default function RootLayout({ children, className = "" }) {
 
   const [loading, setLoading] = useState(true);
-    const path = usePathname();
-    const router = useRouter();
-    const searchParams = useSearchParams();
+
       useEffect(() => {
 
     const handleLoad = () => {
@@ -52,8 +48,7 @@ export default function RootLayout({ children, className = "" }) {
     console.log("Children received:", children);
   }, [children]);
 
-  console.log(path);
-  console.log(searchParams);
+ 
 
   return (
     <html lang="en">

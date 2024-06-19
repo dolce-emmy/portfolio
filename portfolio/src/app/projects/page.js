@@ -147,7 +147,7 @@ const projects = () => {
         <title>Eman | projects Page</title>
         <meta name="description" content="This is projects page" />
       </Head>
-      
+
       {/* <TransitionEffect /> */}
       <main className="montserrat">
         <motion.div
@@ -168,7 +168,7 @@ const projects = () => {
                   title="FriendFusion Social Media"
                   img={project1}
                   summary="FriendFusion is a full-stack social media platform built with the MERN stack (MongoDB, Express.js, React.js, and Node.js). It enables users to manage profiles, add and delete friends, share posts, comment on and like posts, and stay updated with a dynamic daily YouTube video feature."
-                  link="https://friend-fusion-social-media.onrender.com/#/login"
+                  link="https://friendfusion-ii5h.onrender.com"
                   github="https://github.com/dolce-emmy/FriendFusion"
                   type="Featured Project"
                 />

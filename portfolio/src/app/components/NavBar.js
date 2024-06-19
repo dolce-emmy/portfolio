@@ -32,7 +32,9 @@ const CustomLink = ({ href, title, className }) => {
       dark:bg-snow
       `}
       >
+      {/* here we are using &nbsp; to add a space between the title and the transition effect */}
         &nbsp;
+      {/* here we are using the AnimatePresence to animate the transition effect when we click on the link */}
         <AnimatePresence mode="wait">
           <motion.span key={path}>
             <TransitionEffect />
